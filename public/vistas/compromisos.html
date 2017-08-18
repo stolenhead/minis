@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SEGUIMIENTO DE COMPROMISOS</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../vendor/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../vendor/select2/css/select2.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row top">
+    <div class="col-lg-5 col-md-5 col-sm-12">
+      <div class="container-titulo">
+        <h1 class="bold azul no-margin">MINISTRA</h1>
+      </div>
+      <div id="map" class="align">
+        <!-- Raphaël JS Map Here -->
+      </div>
+    </div>
+    <div class="col-lg-7 col-md-7 col-sm-12 derecha">
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="pills-mesa-tab" data-toggle="pill" href="#pills-mesa" role="tab" aria-controls="pills-home" aria-expanded="true">Mesa de Trabajo </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="pills-gore-tab" data-toggle="pill" href="#pills-gore" role="tab" aria-controls="pills-profile" aria-expanded="true">Gore Ejecutivo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="pills-muni-tab" data-toggle="pill" href="#pills-muni" role="tab" aria-controls="pills-profile" aria-expanded="true">Muni Ejecutivo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="pills-convenios-tab" data-toggle="pill" href="#pills-convenios" role="tab" aria-controls="pills-profile" aria-expanded="true">Convenios de Gestión</a>
+        </li>
+      </ul>
+      <section>
+        <div class="tab-content " id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-mesa" role="tabpanel" aria-labelledby="pills-mesa-tab">
+            <div id="accordion" role="tablist">
+              <div class="card">
+                <div class="card-header" role="tab" id="headingOne">
+                  <h5 class="mb-0">
+                    <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      {{compromiso1}} <span class="pull-right">{{estado_cumplimiento}}</span> <span class="pull-right">{{fecha_restante }}</span>
+                    </a>
+                  </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse " role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                        <label>Fecha de Inicio</label>
+                        <input type="number" name="fecha" value="{{ fecha_inicio }}">
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                        <label>Fecha cumplida</label>
+                        <input type="number" name="fecha" value="{{ fecha_cumplida }}">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-4 col-md-4 col-sm-12 form-group">
+                        <label>Tiempo</label>
+                        <input type="number" name="fecha" value="{{ fecha_inicio }}">
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-12 form-group">
+                        <label>Plazo</label>
+                        <input type="number" name="fecha" value="{{ fecha_cumplida }}">
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-12 form-group">
+                        <label>Riesgo</label>
+                        <input type="text" name="fecha" value="{{ estado_cumplimiento }}">
+                      </div>
+                    </div>
+                    <div>
+                      <button type= "button" class="btn btn-primary" data-toggle="modal" data-target="#detalle_compromiso" id="detalle"> Más detalle</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  	
+      </section>
+      <div class="modal fade" id="detalle_compromiso" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="situacion_compromiso">Situación Actual</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6 col-lg-6 col-sm-12">
+                    <div class="row form-group">
+                      <label>Prioridad</label>
+                      <input type="text" name="prioridad" class="form-control" value="{{prioridad}}">
+                    </div>
+                    <div class="row form-group">
+                      <label>Fecha de Compromiso</label>
+                      <div class="detalle_descripcion">{{descripcion}}</div>
+                    </div>
+                    <div class="row form-group">
+                      <label>Tiempo a Cumplir</label>
+                      <div class="detalle_descripcion">{{tiempo_umplir}}</div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6 col-sm-12">
+                    <div class="row form-group">
+                      <label>Inversión</label>
+                      <input type="number" name="inversion" class="form-control" value="{{inversion}}">
+                    </div>
+                    <div class="row form-group">
+                      <label>Riesgo</label>
+                      <input type="text" name="riesgo" class="form-control" value="{{riesgo}}">
+                    </div>
+                    <div class="row form-group ">
+                      <label>Tiempo a Cumplir</label>
+                      <div class="row">
+                        <input type="text" name="iestado"  value="{{estado_cumplimiento}}" class="col-lg-6 col-md-6 col-sm-12 form-control">
+                        <input type="text" name=""  value="{{fecha_cunplir}}" class="col-lg-6 col-md-6 col-sm-12 form-control">
+                      </div>
+                    </div>
+                    <div class="row form-group">
+                      <label>Plazo Faltante</label>
+                      <input type="text" name="iestado" class="form-control" value="{{plazo_faltante}}">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../vendor/jquery/js/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+<script src="../vendor/raphael/raphael-min.js"></script>
+<script src="../vendor/select2/js/select2.min.js"></script>
+<script src="../js/map.js"></script>
+<script src="../js/tabla.js"></script>
+</body>
+</html>
