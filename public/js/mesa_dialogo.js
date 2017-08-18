@@ -1,5 +1,5 @@
 
-var template_acuerdos = '<div class="tab-pane fade show active" id="pills-mesa" role="tabpanel" aria-labelledby="pills-mesa-tab">'+
+/*var template_acuerdos = '<div class="tab-pane fade show active" id="pills-mesa" role="tabpanel" aria-labelledby="pills-mesa-tab">'+
 				           '<div id="accordion" role="tablist">'+
 				                '<div class="card">'+
 					                '<div class="card-header" role="tab" id="headingOne">'+
@@ -93,5 +93,24 @@ var template_detalles=   '<div class="modal fade" id="detalle_compromiso" tabind
 					            '</div>'+
 					          '</div>'+
 					        '</div>'
-					      '</div>';
+					      '</div>';*/
+$(document).ready(function(){
+	var source   = $("#pillls-template").html();
+	var template = Handlebars.compile(source);
+	var context  = {
+	  nav_pills: [
+	    "Mesa de Trabajo",
+	    "Gore Ejeutivo",
+	    "Muni Ejeutivo",
+	    "Convenios de Gestión"
+	  ],
+	  tab_pane:[
+	  	"Compromiso 1",
+	  	"Compromiso 2",
+	  	"Compromiso3",
+	  ]
+	};
+	$('#pillls').html(template(context));
+})
+					      
 

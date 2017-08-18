@@ -13,17 +13,38 @@
 </head>
 <body>
 <div class="container-fluid">
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="../img/logo-negativo-b.png"  style="height: 3em" alt="">
+    </a>
+  </nav>
   <div class="row top">
     <div class="col-lg-5 col-md-5 col-sm-12">
-      <div class="container-titulo">
-        <h1 class="bold azul no-margin">MINISTRA</h1>
-      </div>
       <div id="map" class="align">
         <!-- Raphaël JS Map Here -->
       </div>
     </div>
     <div class="col-lg-7 col-md-7 col-sm-12 derecha">
-      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <div id="pillls"></div>
+      <script id="pillls-template" type="text/x-handlebars-template">
+        <ul class="nav nav-pills nav_pills mb-3" id="pills-tab" role="tablist">
+          {{#each nav_pills}}
+          <li class="nav-item">
+            <a class="nav-link active" id="pills-mesa-tab" data-toggle="pill" href="#pills-mesa" role="tab" aria-controls="pills-home" aria-expanded="true"> {{this}}</a>
+          </li>
+        </ul>
+        <div class="tab-content " id="pills-tabContent">
+          <div class="tab-pane tab_pane fade show active" id="pills-mesa" role="tabpanel" aria-labelledby="pills-mesa-tab">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="list-group">
+              <li class="list-group-item list-group-item-action active" id="list-home-list"  aria-controls="home">{{@key}} : {{this}}<a href="compromisos.html" class="compromisos float-right">Compromisos</a>
+              </li>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </script>
+      <!--<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
         <li class="nav-item">
           <a class="nav-link active" id="pills-mesa-tab" data-toggle="pill" href="#pills-mesa" role="tab" aria-controls="pills-home" aria-expanded="true">Mesa de Trabajo </a>
         </li>
@@ -48,18 +69,7 @@
             </div>
           </div>
         </div>
-        <div class="tab-pane fade " id="pills-gore" role="tabpanel" aria-labelledby="pills-profile-tab"><div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="list-group">
-              <li class="list-group-item list-group-item-action active" id="list-home-list"  aria-controls="home">{{mesa1}}<a href="compromisos.html" class="compromisos float-right">Compromisos</a></li>
-              <li class="list-group-item list-group-item-action" id="list-profile-list"   aria-controls="profile">{{mesa2}}<a href="compromisos.html" class="compromisos float-right">Compromisos</a></li>
-              <li class="list-group-item list-group-item-action" id="list-messages-list"  aria-controls="messages">{{mesa3}}<a class="compromisos float-right" href="compromisos.html" >Compromisos</a></li>
-              <li class="list-group-item list-group-item-action" id="list-settings-list"  aria-controls="settings">{{mesa4}}<a class="compromisos float-right" href="compromisos.html">Compromisos</a></li>
-            </div>
-          </div></div>
-        <div class="tab-pane fade show active" id="pills-gore" role="tabpanel" aria-labelledby="pills-gore-tab">...</div>
-        <div class="tab-pane fade show active" id="pills-muni" role="tabpanel" aria-labelledby="pills-muni-tab">...</div>
-        <div class="tab-pane fade show active" id="pills-convenio" role="tabpanel" aria-labelledby="pills-convenio-tab">...</div>
-      </div>
+      </div>-->
     </div>
   </div>
 </div>
@@ -67,8 +77,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 <script src="../vendor/raphael/raphael-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script
 <script src="../vendor/select2/js/select2.min.js"></script>
 <script src="../js/map.js"></script>
-<script src="../js/tabla.js"></script>
+<script src="../js/mesa_dialogo.js"></script>
 </body>
 </html>
