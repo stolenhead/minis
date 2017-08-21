@@ -249,18 +249,21 @@ $(".land").click(function () {
   $(".land").removeClass("blue");
   $(".landa").removeClass("blue");
   $(this).addClass("blue");
-})
+});
+
 $(".landa").click(function () {
   $(".land").removeClass("blue");
   $(".landa").addClass("blue");
-})
+});
+
 $(document).ready(function(){
   $(".landa").addClass("blue");
 });
+
 for (var i = 0; i < regions.length; i++) {
   regions[i].click(function (e) {
-
     var region_data = this.data('region');
+    console.log(region_data);
     $('#id_departamento').val(region_data).trigger("change");
   });
   // Showing off

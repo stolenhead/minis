@@ -1,8 +1,4 @@
 $(document).ready(function () {
-  $('#pills-gore-tab ').click(function (e) {
-    e.preventDefault()
-    $(this).tab('show')
-  });
   var eessnombre = '';
   var departamentos = (function () {
     var json_data = null;

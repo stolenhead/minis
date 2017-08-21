@@ -30,46 +30,25 @@
         <ul class="nav nav-pills nav_pills mb-3" id="pills-tab" role="tablist">
           {{#each nav_pills}}
           <li class="nav-item">
-            <a class="nav-link active" id="pills-mesa-tab" data-toggle="pill" href="#pills-mesa" role="tab" aria-controls="pills-home" aria-expanded="true"> {{this}}</a>
+            <a class="nav-link " id="pills_{{id}}_tab" data-toggle="pill" href="#pills_{{id}}" role="tab" aria-expanded="true"> {{this.pill_Nav}}</a>
           </li>
+          {{/each}}
         </ul>
-        <div class="tab-content " id="pills-tabContent">
-          <div class="tab-pane tab_pane fade show active" id="pills-mesa" role="tabpanel" aria-labelledby="pills-mesa-tab">
-          <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="list-group">
-              <li class="list-group-item list-group-item-action active" id="list-home-list"  aria-controls="home">{{@key}} : {{this}}<a href="compromisos.html" class="compromisos float-right">Compromisos</a>
-              </li>
-              {{/each}}
+        <div class="tab-content tab_content " id="pills-tabContent"> 
+        {{#each nav_pills}}
+          <div class="tab-pane fade show " id="pills_{{id}}" role="tabpanel">
+          {{#each list_group_pills}}
+            <div class="col-lg-12 col-md-12 col-sm-12 " style="margin-bottom: 1rem">
+              <div class="list-group_mesa">
+                <li class="list-group-item list-group-item-action " id="list_{{id.list_group_pills}}"  aria-controls="home">{{mesa_info}}<a href="compromisos.html" class="compromisos float-right">Compromisos</a>
+                </li>
+              </div>
             </div>
+          {{/each}}
           </div>
+        {{/each}}
         </div>
       </script>
-      <!--<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="pills-mesa-tab" data-toggle="pill" href="#pills-mesa" role="tab" aria-controls="pills-home" aria-expanded="true">Mesa de Trabajo </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="pills-gore-tab" data-toggle="pill" href="#pills-gore" role="tab" aria-controls="pills-profile" aria-expanded="true">Gore Ejecutivo</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="pills-muni-tab" data-toggle="pill" href="#pills-muni" role="tab" aria-controls="pills-profile" aria-expanded="true">Muni Ejecutivo</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="pills-convenios-tab" data-toggle="pill" href="#pills-convenios" role="tab" aria-controls="pills-profile" aria-expanded="true">Convenios de Gestión</a>
-        </li>
-      </ul>
-      <div class="tab-content " id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-mesa" role="tabpanel" aria-labelledby="pills-mesa-tab">
-          <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="list-group">
-              <li class="list-group-item list-group-item-action active" id="list-home-list"  aria-controls="home">{{mesa1}}<a href="compromisos.html" class="compromisos float-right">Compromisos</a></li>
-              <li class="list-group-item list-group-item-action" id="list-profile-list"   aria-controls="profile">{{mesa2}}<a href="compromisos.html" class="compromisos float-right">Compromisos</a></li>
-              <li class="list-group-item list-group-item-action" id="list-messages-list"  aria-controls="messages">{{mesa3}}<a class="compromisos float-right" href="compromisos.html" >Compromisos</a></li>
-              <li class="list-group-item list-group-item-action" id="list-settings-list"  aria-controls="settings">{{mesa4}}<a class="compromisos float-right" href="compromisos.html">Compromisos</a></li>
-            </div>
-          </div>
-        </div>
-      </div>-->
     </div>
   </div>
 </div>
@@ -77,7 +56,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 <script src="../vendor/raphael/raphael-min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script
+<script src="../vendor/handlebars/handlebars-v4.0.10.js"></script>
 <script src="../vendor/select2/js/select2.min.js"></script>
 <script src="../js/map.js"></script>
 <script src="../js/mesa_dialogo.js"></script>

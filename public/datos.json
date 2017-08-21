@@ -1,0 +1,44 @@
+{ 
+  "departamento" :{
+    "16":{ 
+      "region":"Loreto",
+      "pendientes_totales":"9",
+      "tipo":[
+        {
+          "mesa":[
+           {
+            "pendientes":"2",
+            "cumplidos":"3"
+           },
+          ]
+        },
+        {
+          "gore":[
+            {
+              "pendientes":"3",
+              "cumplidos":"1"
+            }
+          ]
+        },
+        {
+          "muni":[
+            {
+              "pendientes":"2",
+              "cumplidos":"2"
+            }
+          ]
+        },
+        {
+          "convenio":[
+            {
+              "pendientes":"2",
+              "cumplidos":"0"
+            }
+          ]
+        }
+      ],
+      "cumplidos_totales":"6"
+     }
+    }
+  }
+};

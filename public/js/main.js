@@ -23,3 +23,36 @@ var menu_template=  '<div class="lista-container ">'+
 							            '<p>Cumplidos :{{cumplidos_coneniosgestion}}</p></a>'+
 							          '</div>'+
 							        '</div>';
+
+var mostrar=function(data){
+  $("#tipo").empty();
+  $.ajax({
+    url: window.location.href +"json/datos.json",
+    type:'GET',
+    success: function(response){
+        var data=response.mesa;
+        var gestas=data.length;
+        console.log(data);
+    },
+    error:function(error){
+      console.log(error);
+    }
+  });    
+}
+
+for (var i = 0; i < regions.length; i++) {
+  regions[i].click(function (e) {
+    var region_data = this.data('region');
+    console.log(region_data);
+    $('#id_departamento').val(region_data).trigger("change");
+    mostrar(this);
+  });
+  // Showing off
+  regions[i].mouseover(function (e) {
+    this.attr("fill", "#1c7dcc");
+  });
+
+  regions[i].mouseout(function (e) {
+    this.attr("fill", "#43b5bf");
+  });
+}
