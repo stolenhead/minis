@@ -245,32 +245,20 @@ regions.push(lago);
 
 var mapaperu = paper.set(lago, ucayali, tumbes, tacna, amazonas, ancash, apurimac, arequipa, ayacucho, cajamarca, callao, cusco, huanuco, huancavelica, ica, junin, libertad, lambayeque, lima, pelma, loreto, madre, moquegua, pasco, piura, puno, martin).transform("s0.90,0.90,0,0");
 
-var menu_template=  '<div class="lista-container ">'+
-                      '<div class="row">'+
-                        '<div class="col-lg-6 col-md-6 col-sm-12 tipos">'+
-                          '<a href="vistas/mesa_dialogo.html"><h2  class="azul">MESA DE DIÀLOGO</h2>'+
-                          '<p>Pendientes : {{pendientes_mesadialogos}} </p>'+
-                          '<p>Cumplidos :{{cumplidos_mesadialogos}}</p></a>'+         
-                        '</div>'+
-                        '<div class="col-lg-6 col-md-6 col-sm-12 tipos">'+
-                          '<a href="vistas/gore.html"><h2  class="azul">GORE EJECUTIVO</h2>'+
-                          '<p>Pendientes : {{pendientes_gore}} </p>'+
-                          '<p>Cumplidos :{{cumplidos_gore}}</p></a>'+
-                        '</div>'+
-                      '</div>'
-                      '<div class="row">'+
-                        '<div class="col-lg-6 col-md-6 col-sm-12 tipos">'+
-                          '<a href="vistas/mui.html"><h2  class="azul">MUNI EJECUTIVO</h2>'+
-                          '<p>Pendientes : {{pendientes_muni} </p>'+
-                          '<p>Cumplidos :{{cumplidos_muni}}</p></a>'+
-                        '</div>'+
-                        '<div class="col-lg-6 col-md-6 col-sm-12 tipos">'+
-                          '<a href="vistas/convenios"><h2  class="azul">CONVENIOS DE GESTION</h2>'+
-                          '<p>Pendientes : {{pendientes_conveniosgestion} </p>'+
-                          '<p>Cumplidos :{{cumplidos_coneniosgestion}}</p></a>'+
-                        '</div>'+
-                      '</div>';
+var mesa_template_pendientes=  '<p>Pendientes : <strong>{{pendientes_mesadialogos}}</strong></p>';
+var mesa_template_cumplido= '<p>Cumplidos : <strong>{{cumplidos_mesadialogos}}</strong></p>';
 
+var gore_template_pendientes=  '<p>Pendientes : <strong>{{pendientes_gore}} </strong></p>';
+var gore_template_cumplido=    '<p>Cumplidos :<strong>{{cumplidos_gore}}</strong></p>';  
+
+var muni_template_pendientes=  '<p>Pendientes : {{pendientes_muni}} </p>';
+var muni_template_cumplido ='<p>Cumplidos :<trong>{{cumplidos_muni}} </strong></p>';
+
+var convenio_template_pendientes= '<p>Pendientes : {{pendientes_conveniosgestion}} </p>';
+var convenio_template_cumplido ='<p>Cumplidos :{{cumplidos_conveniosgestion}}</p>';
+ 
+var total_pendientes= '<p class="align">Pendientes Totales : {{totalpendientes}}</p>';
+var total_cumplidos= '<p class="align">Compromisos Cumplidos :{{totalcumplidos}}</p>';             
 
 $(".land").click(function () {
   $(".land").removeClass("blue");
@@ -278,39 +266,60 @@ $(".land").click(function () {
   $(this).addClass("blue");
 });
 
-
 $(".landa").click(function () {
   $(".land").removeClass("blue");
   $(".landa").addClass("blue");
-
 });
 
-
-
->>>>>>> d29f5164278a30382ce6eb52c256f1d3b4ee5088
-
 $(document).ready(function(){
-  $(".landa").addClass("blue");
-  
+  $(".landa").addClass("blue");  
 });
 
 for (var i = 0; i < regions.length; i++) {
   regions[i].click(function (e) {
-    $("#lista_Container").empty();
+    $("#mesa_dialogo_container").empty();
+    $("#gore_container").empty();
+    $("#muni_container").empty();
+    $("#padre_totales").empty();
+    $("#convenio_container").empty();
     var region_data = this.data('region');
     console.log(region_data);
+    
     $.ajax({
-    url: "../datos.json",
-    type: "GET",
+      url: "/datos.json",
+      type: "GET",
       success: function(response) {
         var data = response.departamento;
-        console.log(data);
+        var data_tipo= (data[region_data]);
+        var titulo_dialogo=$("#titulo_mesa").text();
+        var titulo_gore=$("#titulo_gore").text();
+        var titulo_muni=$("#titulo_muni").text();
+        var titulo_convenio=$("#titulo_convenio").text();
+        var tipo=data_tipo.tipo;
+        var reemplazarTotalPendientes =total_pendientes.replace("{{totalpendientes}}", data_tipo.cumplidos_totales);
+        var reemplazarTotalCumplidos=total_cumplidos.replace("{{totalcumplidos}}",data_tipo.pendientes_totales);
+        var reemplazarPendientes= mesa_template_pendientes.replace("{{pendientes_mesadialogos}}" , tipo[titulo_dialogo].pendientes);
+        var reemplazarCumplidos=mesa_template_cumplido.replace("{{cumplidos_mesadialogos}}" , tipo[titulo_dialogo].cumplidos);
+        var gorereemplazarPendientes=gore_template_pendientes.replace("{{pendientes_gore}}",tipo[titulo_gore].pendientes);
+        var gorereemplazarCumplidos=gore_template_cumplido.replace("{{cumplidos_gore}}",tipo[titulo_gore].cumplidos);
+        var munireemplazarPendientes=muni_template_pendientes.replace("{{pendientes_muni}}",tipo[titulo_muni].pendientes);
+        var munireemplazarCumplidos=muni_template_cumplido.replace("{{cumplidos_muni}}",tipo[titulo_muni].cumplidos);
+        var convenioreemplazarPendientes=convenio_template_pendientes.replace("{{pendientes_conveniosgestion}}",tipo[titulo_convenio].pendientes);
+        var convenioreemplazarCumplidos=convenio_template_cumplido.replace("{{cumplidos_conveniosgestion}}",tipo[titulo_convenio].cumplidos);
+        $("#mesa_dialogo_container").append(reemplazarCumplidos , reemplazarPendientes);  
+        $("#gore_container").append(gorereemplazarPendientes , gorereemplazarCumplidos);
+        $("#muni_container").append(munireemplazarPendientes,munireemplazarCumplidos);
+        $("#convenio_container").append(convenioreemplazarPendientes,convenioreemplazarCumplidos) ;
+        $("#padre_totales").append(reemplazarTotalPendientes,reemplazarTotalCumplidos);
+
+        $("#titulo_mesa").click(function(){
+          $(".desaparece").toggleClass("hidden");
+        })
       },
       error: function(error) {
         console.log(error);
       }
     });
-    $('#id_departamento').val(region_data).trigger("change");
   });
   // Showing off
   regions[i].mouseover(function (e) {
