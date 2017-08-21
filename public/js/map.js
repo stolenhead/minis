@@ -245,25 +245,71 @@ regions.push(lago);
 
 var mapaperu = paper.set(lago, ucayali, tumbes, tacna, amazonas, ancash, apurimac, arequipa, ayacucho, cajamarca, callao, cusco, huanuco, huancavelica, ica, junin, libertad, lambayeque, lima, pelma, loreto, madre, moquegua, pasco, piura, puno, martin).transform("s0.90,0.90,0,0");
 
+var menu_template=  '<div class="lista-container ">'+
+                      '<div class="row">'+
+                        '<div class="col-lg-6 col-md-6 col-sm-12 tipos">'+
+                          '<a href="vistas/mesa_dialogo.html"><h2  class="azul">MESA DE DIÀLOGO</h2>'+
+                          '<p>Pendientes : {{pendientes_mesadialogos}} </p>'+
+                          '<p>Cumplidos :{{cumplidos_mesadialogos}}</p></a>'+         
+                        '</div>'+
+                        '<div class="col-lg-6 col-md-6 col-sm-12 tipos">'+
+                          '<a href="vistas/gore.html"><h2  class="azul">GORE EJECUTIVO</h2>'+
+                          '<p>Pendientes : {{pendientes_gore}} </p>'+
+                          '<p>Cumplidos :{{cumplidos_gore}}</p></a>'+
+                        '</div>'+
+                      '</div>'
+                      '<div class="row">'+
+                        '<div class="col-lg-6 col-md-6 col-sm-12 tipos">'+
+                          '<a href="vistas/mui.html"><h2  class="azul">MUNI EJECUTIVO</h2>'+
+                          '<p>Pendientes : {{pendientes_muni} </p>'+
+                          '<p>Cumplidos :{{cumplidos_muni}}</p></a>'+
+                        '</div>'+
+                        '<div class="col-lg-6 col-md-6 col-sm-12 tipos">'+
+                          '<a href="vistas/convenios"><h2  class="azul">CONVENIOS DE GESTION</h2>'+
+                          '<p>Pendientes : {{pendientes_conveniosgestion} </p>'+
+                          '<p>Cumplidos :{{cumplidos_coneniosgestion}}</p></a>'+
+                        '</div>'+
+                      '</div>';
+
+
 $(".land").click(function () {
   $(".land").removeClass("blue");
   $(".landa").removeClass("blue");
   $(this).addClass("blue");
 });
 
+
 $(".landa").click(function () {
   $(".land").removeClass("blue");
   $(".landa").addClass("blue");
+
 });
+
+
+
+>>>>>>> d29f5164278a30382ce6eb52c256f1d3b4ee5088
 
 $(document).ready(function(){
   $(".landa").addClass("blue");
+  
 });
 
 for (var i = 0; i < regions.length; i++) {
   regions[i].click(function (e) {
+    $("#lista_Container").empty();
     var region_data = this.data('region');
     console.log(region_data);
+    $.ajax({
+    url: "../datos.json",
+    type: "GET",
+      success: function(response) {
+        var data = response.departamento;
+        console.log(data);
+      },
+      error: function(error) {
+        console.log(error);
+      }
+    });
     $('#id_departamento').val(region_data).trigger("change");
   });
   // Showing off

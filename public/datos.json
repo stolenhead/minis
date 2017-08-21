@@ -1,44 +1,112 @@
-{ 
-  "departamento" :{
-    "16":{ 
-      "region":"Loreto",
-      "pendientes_totales":"9",
-      "tipo":[
-        {
-          "mesa":[
-           {
-            "pendientes":"2",
-            "cumplidos":"3"
-           },
-          ]
-        },
-        {
-          "gore":[
-            {
-              "pendientes":"3",
-              "cumplidos":"1"
-            }
-          ]
-        },
-        {
-          "muni":[
-            {
-              "pendientes":"2",
-              "cumplidos":"2"
-            }
-          ]
-        },
-        {
-          "convenio":[
-            {
-              "pendientes":"2",
-              "cumplidos":"0"
-            }
-          ]
-        }
-      ],
-      "cumplidos_totales":"6"
-     }
+
+{
+  "departamento":[
+    {
+      "16":
+      {
+        "id":"Loreto",
+        "pendientes Totales":"1",
+        "cumplidos totales":"3",
+        "riesgo":"##",
+        "tipo":[
+          {
+            "Mesa de Trabajo":[
+              { "pendientes":"##",
+                "cumplidos":"##",
+                "mesa_de_trabajo":[
+                  {
+                    "mesa aa":[
+                      {
+                        "compromiso1":[
+                          {
+                          "estado":"pendiente",
+                           "descripcion":"ddjhgkj",
+                           "prioridad":"alto",
+                           "riesgo":"si",
+                           "plazo_faltante":"10 meses",
+                           "inversion":"###",
+                           "moneda_tipo":"usd",
+                           "fecha_de_comppromiso":"24/12/2",
+                           "fecha_cumplimiento":"##/##/##"
+                          }
+                        ]
+                      },{
+                        "compromiso2":[
+                          {
+                          "estado":"pendiente",
+                           "descripcion":"aaaaa",
+                           "prioridad":"alto",
+                           "riesgo":"si",
+                           "plazo_faltante":"10 meses",
+                           "inversion":"100",
+                           "moneda_tipo":"usd",
+                           "fecha_de_comppromiso":"24/65/12",
+                           "fecha_cumplimiento":"12/34/12"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "12":
+      {
+        "id":"Loreto",
+        "pendientes Totales":"1",
+        "cumplidos totales":"3",
+        "riesgo":"##",
+        "tipo":[
+          {
+            "Mesa de Trabajo":[
+              { "pendientes":"##",
+                "cumplidos":"##",
+                "mesa_de_trabajo":[
+                  {
+                    "mesa aa":[
+                      {
+                        "compromiso1":[
+                          {
+                          "estado":"pendiente",
+                           "descripcion":"ddjhgkj",
+                           "prioridad":"alto",
+                           "riesgo":"si",
+                           "plazo_faltante":"10 meses",
+                           "inversion":"###",
+                           "moneda_tipo":"usd",
+                           "fecha_de_comppromiso":"24/12/2",
+                           "fecha_cumplimiento":"##/##/##"
+                          }
+                        ]
+                      },{
+                        "compromiso2":[
+                          {
+                          "estado":"pendiente",
+                           "descripcion":"aaaaa",
+                           "prioridad":"alto",
+                           "riesgo":"si",
+                           "plazo_faltante":"10 meses",
+                           "inversion":"100",
+                           "moneda_tipo":"usd",
+                           "fecha_de_comppromiso":"24/65/12",
+                           "fecha_cumplimiento":"12/34/12"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     }
-  }
-};
+  ]
+}
+
