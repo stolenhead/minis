@@ -2,281 +2,265 @@
   "departamento":{
     "16": {
       "nombre":"loreto",
-      "pendientes_totales":"1",
-      "cumplidos_totales":"3",
-      "riesgo":"##",
+      "pendientes_totales":"9",
+      "cumplidos_totales":"4",
+      "riesgo":"No",
       "tipo":{
-        "Mesa de Diálogo": { 
+        "mesa_dialogo": { 
           "nombre":"Mesa de Diálogo",
-          "pendientes":"##",
-          "cumplidos":"##",
-          "mesas_de_trabajo":{
-            "mesa aa":{
-              "compromiso1":{
-                "nombre":"compromiso1",
-                "estado":"pendiente",
-                "descripcion":"ddjhgkj",
-                "prioridad":"alto",
-                "riesgo":"si",
-                "plazo_faltante":"10 meses",
-                "inversion":"###",
-                "moneda_tipo":"usd",
-                "fecha_de_comppromiso":"24/12/2",
-                "fecha_cumplimiento":"##/##/##"
-              },
-              "compromiso2":{
-                "nombre":"compromiso2",
-                "estado":"pendiente",
-                "descripcion":"ddjhgkj",
-                "prioridad":"alto",
-                "riesgo":"si",
-                "plazo_faltante":"10 meses",
-                "inversion":"###",
-                "moneda_tipo":"usd",
-                "fecha_de_comppromiso":"24/12/2",
-                "fecha_cumplimiento":"##/##/##" 
-              }
+          "pendientes":"1",
+          "cumplidos":"2",
+          "mesas_de_trabajo":[
+            {
+              "nombre":"Mesa de Trabajo para el desarrollo de las cuencas del Pastaza, Tigre, Corrientes y Marañón del Departamento de Loreto(4 Cuencas)",
+              "compromisos":[
+                {
+                  "nombre":".- Ampliación de nueva infraestructura de Hospital Virgen de Fátima de Chachapoyas",
+                  "plazo":"-",
+                  "riesgo":"No",
+                  "estado":"pendiente",
+                  "descripcion":"ddjhgkj",
+                  "situacion_actual":"Preparación para la puesta en operación. Obra no llegó a ser entregada y recepcionada por la DIRESA Amazonas porque falta implementar la central de aire comprimido en Neonatología. La empresa constructora se ha negado a la solicitud de PRONIS de hacerse cargo de la instalación de dicha central. Por ello, PRONIS evalúa iniciar un proceso judicial contra la empresa constructora y la empresa supervisora. Mientras tanto, el Gobierno Regional se hará cargo de la provisión de aire comprimido",
+                  "prioridad":"alto",
+                  "riesgo":"si",
+                  "plazo_faltante":"10 meses",
+                  "inversion":"S/ 16,621,251.42",
+                  "moneda_tipo":"usd",
+                  "fecha_de_comppromiso":"24/12/2",
+                  "fecha_cumplimiento":"##/##/##"
+                },
+                {
+                  "nombre":".2.- Sustitución de infraestructura y equipamiento en Hospital Santiago Apóstol",
+                  "plazo":"-",
+                  "riesgo":"No",
+                  "nombre":"compromiso1",
+                  "estado":"pendiente",
+                  "codigo_SNIP":"83220",
+                  "descripcion":"-",
+                  "situacion_actual":"OPI MINSA opinó favorablemente (07.11.2016). MEF habilitó el sistema para que el GORE pueda dar viabilidad al PIP con un solo nivel de estudio por ser estratégico. PIP viable desde el 08.11.2016. Está en la etapa de perfil viable a cargo del GORE.El GORE ha convocado a concurso para elaboración de expediente técnico. La fecha de programación de la buena pro es el 21 de agosto 2017.",
+                  "prioridad":"alto",
+                  "riesgo":"si",
+                  "plazo_faltante":"-",
+                  "inversion":"s/.88,465,113",
+                  "moneda_tipo":"soles",
+                  "fecha_de_comppromiso":"24/12/2",
+                  "fecha_cumplimiento":"##/##/##"                    
+                }
+              ]             
+            },
+            {
+              "nombre":"Mesa d56464564",
+              "compromisos":[
+                {
+                  "nombre":".- Ampliación de nueva infraestructura de Hospital Virgen de Fátima de Chachapoyas",
+                  "plazo":"-",
+                  "riesgo":"No",
+                  "estado":"pendiente",
+                  "descripcion":"ddjhgkj",
+                  "situacion_actual":"Preparación para la puesta en operación. Obra no llegó a ser entregada y recepcionada por la DIRESA Amazonas porque falta implementar la central de aire comprimido en Neonatología. La empresa constructora se ha negado a la solicitud de PRONIS de hacerse cargo de la instalación de dicha central. Por ello, PRONIS evalúa iniciar un proceso judicial contra la empresa constructora y la empresa supervisora. Mientras tanto, el Gobierno Regional se hará cargo de la provisión de aire comprimido",
+                  "prioridad":"alto",
+                  "riesgo":"si",
+                  "plazo_faltante":"10 meses",
+                  "inversion":"S/ 16,621,251.42",
+                  "moneda_tipo":"usd",
+                  "fecha_de_comppromiso":"24/12/2",
+                  "fecha_cumplimiento":"##/##/##"
+                }
+              ]             
             }
-          }          
+          ]       
         },
-        "Gore Ejecutivo": { 
-          "nombre":"Gore",
-          "pendientes":"##",
-          "cumplidos":"##",
-          "mesas_de_trabajo":{
-            "mesa aa":{
-              "compromiso1":{
-                "nombre":"compromiso1",
-                "estado":"pendiente",
-                "descripcion":"ddjhgkj",
-                "prioridad":"alto",
-                "riesgo":"si",
-                "plazo_faltante":"10 meses",
-                "inversion":"###",
-                "moneda_tipo":"usd",
-                "fecha_de_comppromiso":"24/12/2",
-                "fecha_cumplimiento":"##/##/##"
-              },
-              "compromiso2":{
-                "nombre":"compromiso2",
-                "estado":"pendiente",
-                "descripcion":"ddjhgkj",
-                "prioridad":"alto",
-                "riesgo":"si",
-                "plazo_faltante":"10 meses",
-                "inversion":"###",
-                "moneda_tipo":"usd",
-                "fecha_de_comppromiso":"24/12/2",
-                "fecha_cumplimiento":"##/##/##" 
-              }
-            }
-          } 
-        },
-        "Muni Ejecutivo": { 
-          "nombre":"Gore",
-          "pendientes":"##",
-          "cumplidos":"##",
-          "mesas_de_trabajo":{
-            "mesa aa":{
-              "compromiso1":{
-                "nombre":"compromiso1",
-                "estado":"pendiente",
-                "descripcion":"ddjhgkj",
-                "prioridad":"alto",
-                "riesgo":"si",
-                "plazo_faltante":"10 meses",
-                "inversion":"###",
-                "moneda_tipo":"usd",
-                "fecha_de_comppromiso":"24/12/2",
-                "fecha_cumplimiento":"##/##/##"
-              },
-              "compromiso2":{
-                "nombre":"compromiso2",
-                "estado":"pendiente",
-                "descripcion":"ddjhgkj",
-                "prioridad":"alto",
-                "riesgo":"si",
-                "plazo_faltante":"10 meses",
-                "inversion":"###",
-                "moneda_tipo":"usd",
-                "fecha_de_comppromiso":"24/12/2",
-                "fecha_cumplimiento":"##/##/##" 
-              }
-            }
-          } 
-        },
-        "Convenios de Gestión": { 
-          "nombre":"Gore",
-          "pendientes":"##",
-          "cumplidos":"##",
-          "mesas_de_trabajo":{
-            "mesa aa":{
-              "compromiso1":{
-                "nombre":"compromiso1",
-                "estado":"pendiente",
-                "descripcion":"ddjhgkj",
-                "prioridad":"alto",
-                "riesgo":"si",
-                "plazo_faltante":"10 meses",
-                "inversion":"###",
-                "moneda_tipo":"usd",
-                "fecha_de_comppromiso":"24/12/2",
-                "fecha_cumplimiento":"##/##/##"
-              },
-              "compromiso2":{
-                "nombre":"compromiso2",
-                "estado":"pendiente",
-                "descripcion":"ddjhgkj",
-                "prioridad":"alto",
-                "riesgo":"si",
-                "plazo_faltante":"10 meses",
-                "inversion":"###",
-                "moneda_tipo":"usd",
-                "fecha_de_comppromiso":"24/12/2",
-                "fecha_cumplimiento":"##/##/##" 
-              }
-            }
-          } 
-        }
-      }
-    },
-    "25": {
-      "nombre":"loreto",
-      "pendientes_totales":"8",
-      "cumplidos_totales":"3",
-      "riesgo":"##",
-      "tipo":{
-        "Mesa de Diálogo": { 
+        "mesa_gore": { 
           "nombre":"Mesa de Diálogo",
-          "pendientes":"##",
-          "cumplidos":"##",
-          "mesas_de_trabajo":{
-            "mesa aa":[{
-              "compromiso1":{
-                "nombre":"compromiso1",
-                "estado":"pendiente",
-                "descripcion":"ddjhgkj",
-                "prioridad":"alto",
-                "riesgo":"si",
-                "plazo_faltante":"10 meses",
-                "inversion":"###",
-                "moneda_tipo":"usd",
-                "fecha_de_comppromiso":"24/12/2",
-                "fecha_cumplimiento":"##/##/##"
-              },
-              "compromiso2":{
-                "nombre":"compromiso2",
-                "estado":"pendiente",
-                "descripcion":"ddjhgkj",
-                "prioridad":"alto",
-                "riesgo":"si",
-                "plazo_faltante":"10 meses",
-                "inversion":"###",
-                "moneda_tipo":"usd",
-                "fecha_de_comppromiso":"24/12/2",
-                "fecha_cumplimiento":"##/##/##" 
-              }
-            }]
-          }          
-        },
-        "Gore Ejecutivo": { 
-          "nombre":"Gore",
-          "pendientes":"##",
-          "cumplidos":"##",
-          "mesas_de_trabajo":{
-            "mesa aa":{
-              "compromiso1":{
-                "nombre":"compromiso1",
-                "estado":"pendiente",
-                "descripcion":"ddjhgkj",
-                "prioridad":"alto",
-                "riesgo":"si",
-                "plazo_faltante":"10 meses",
-                "inversion":"###",
-                "moneda_tipo":"usd",
-                "fecha_de_comppromiso":"24/12/2",
-                "fecha_cumplimiento":"##/##/##"
-              },
-              "compromiso2":{
-                "nombre":"compromiso2",
-                "estado":"pendiente",
-                "descripcion":"ddjhgkj",
-                "prioridad":"alto",
-                "riesgo":"si",
-                "plazo_faltante":"10 meses",
-                "inversion":"###",
-                "moneda_tipo":"usd",
-                "fecha_de_comppromiso":"24/12/2",
-                "fecha_cumplimiento":"##/##/##" 
-              }
+          "pendientes":"1",
+          "cumplidos":"2",
+          "mesas_de_trabajo":[
+            {
+              "nombre":"Mesa de Trabajo para el desarrollo de las cuencas del Pastaza, Tigre, Corrientes y Marañón del Departamento de Loreto(4 Cuencas)",
+              "compromisos":[
+                {
+                  "nombre":".- Ampliación de nueva infraestructura de Hospital Virgen de Fátima de Chachapoyas",
+                  "plazo":"-",
+                  "riesgo":"No",
+                  "estado":"pendiente",
+                  "descripcion":"ddjhgkj",
+                  "situacion_actual":"Preparación para la puesta en operación. Obra no llegó a ser entregada y recepcionada por la DIRESA Amazonas porque falta implementar la central de aire comprimido en Neonatología. La empresa constructora se ha negado a la solicitud de PRONIS de hacerse cargo de la instalación de dicha central. Por ello, PRONIS evalúa iniciar un proceso judicial contra la empresa constructora y la empresa supervisora. Mientras tanto, el Gobierno Regional se hará cargo de la provisión de aire comprimido",
+                  "prioridad":"alto",
+                  "riesgo":"si",
+                  "plazo_faltante":"10 meses",
+                  "inversion":"S/ 16,621,251.42",
+                  "moneda_tipo":"usd",
+                  "fecha_de_comppromiso":"24/12/2",
+                  "fecha_cumplimiento":"##/##/##"
+                },
+                {
+                  "nombre":".2.- Sustitución de infraestructura y equipamiento en Hospital Santiago Apóstol",
+                  "plazo":"-",
+                  "riesgo":"No",
+                  "nombre":"compromiso1",
+                  "estado":"pendiente",
+                  "codigo_SNIP":"83220",
+                  "descripcion":"-",
+                  "situacion_actual":"OPI MINSA opinó favorablemente (07.11.2016). MEF habilitó el sistema para que el GORE pueda dar viabilidad al PIP con un solo nivel de estudio por ser estratégico. PIP viable desde el 08.11.2016. Está en la etapa de perfil viable a cargo del GORE.El GORE ha convocado a concurso para elaboración de expediente técnico. La fecha de programación de la buena pro es el 21 de agosto 2017.",
+                  "prioridad":"alto",
+                  "riesgo":"si",
+                  "plazo_faltante":"-",
+                  "inversion":"s/.88,465,113",
+                  "moneda_tipo":"soles",
+                  "fecha_de_comppromiso":"24/12/2",
+                  "fecha_cumplimiento":"##/##/##"                    
+                }
+              ]             
+            },
+            {
+              "nombre":"Mesa de Trabajo para el desarrollo de las cuencas del Pastaza, Tigre, Corrientes y Marañón del Departamento de Loreto(4 Cuencas)",
+              "compromisos":[
+                {
+                  "nombre":".- Ampliación de nueva infraestructura de Hospital Virgen de Fátima de Chachapoyas",
+                  "plazo":"-",
+                  "riesgo":"No",
+                  "estado":"pendiente",
+                  "descripcion":"ddjhgkj",
+                  "situacion_actual":"Preparación para la puesta en operación. Obra no llegó a ser entregada y recepcionada por la DIRESA Amazonas porque falta implementar la central de aire comprimido en Neonatología. La empresa constructora se ha negado a la solicitud de PRONIS de hacerse cargo de la instalación de dicha central. Por ello, PRONIS evalúa iniciar un proceso judicial contra la empresa constructora y la empresa supervisora. Mientras tanto, el Gobierno Regional se hará cargo de la provisión de aire comprimido",
+                  "prioridad":"alto",
+                  "riesgo":"si",
+                  "plazo_faltante":"10 meses",
+                  "inversion":"S/ 16,621,251.42",
+                  "moneda_tipo":"usd",
+                  "fecha_de_comppromiso":"24/12/2",
+                  "fecha_cumplimiento":"##/##/##"
+                }
+              ]             
             }
-          } 
+          ]      
         },
-        "Muni Ejecutivo": { 
-          "nombre":"Gore",
-          "pendientes":"##",
-          "cumplidos":"##",
-          "mesas_de_trabajo":{
-            "mesa aa":{
-              "compromiso1":{
-                "nombre":"compromiso1",
-                "estado":"pendiente",
-                "descripcion":"ddjhgkj",
-                "prioridad":"alto",
-                "riesgo":"si",
-                "plazo_faltante":"10 meses",
-                "inversion":"###",
-                "moneda_tipo":"usd",
-                "fecha_de_comppromiso":"24/12/2",
-                "fecha_cumplimiento":"##/##/##"
-              },
-              "compromiso2":{
-                "nombre":"compromiso2",
-                "estado":"pendiente",
-                "descripcion":"ddjhgkj",
-                "prioridad":"alto",
-                "riesgo":"si",
-                "plazo_faltante":"10 meses",
-                "inversion":"###",
-                "moneda_tipo":"usd",
-                "fecha_de_comppromiso":"24/12/2",
-                "fecha_cumplimiento":"##/##/##" 
-              }
+        "mesa_muni": { 
+          "nombre":"Muni Ejecutivo",
+          "pendientes":"2",
+          "cumplidos":"2",
+          "mesas_de_trabajo":[
+            {
+              "nombre":"Mesa de Trabajo para el desarrollo de las cuencas del Pastaza, Tigre, Corrientes y Marañón del Departamento de Loreto(4 Cuencas)",
+              "compromisos":[
+                {
+                  "nombre":".- Ampliación de nueva infraestructura de Hospital Virgen de Fátima de Chachapoyas",
+                  "plazo":"-",
+                  "riesgo":"No",
+                  "estado":"pendiente",
+                  "descripcion":"ddjhgkj",
+                  "situacion_actual":"Preparación para la puesta en operación. Obra no llegó a ser entregada y recepcionada por la DIRESA Amazonas porque falta implementar la central de aire comprimido en Neonatología. La empresa constructora se ha negado a la solicitud de PRONIS de hacerse cargo de la instalación de dicha central. Por ello, PRONIS evalúa iniciar un proceso judicial contra la empresa constructora y la empresa supervisora. Mientras tanto, el Gobierno Regional se hará cargo de la provisión de aire comprimido",
+                  "prioridad":"alto",
+                  "riesgo":"si",
+                  "plazo_faltante":"10 meses",
+                  "inversion":"S/ 16,621,251.42",
+                  "moneda_tipo":"usd",
+                  "fecha_de_comppromiso":"24/12/2",
+                  "fecha_cumplimiento":"##/##/##"
+                },
+                {
+                  "nombre":".2.- Sustitución de infraestructura y equipamiento en Hospital Santiago Apóstol",
+                  "plazo":"-",
+                  "riesgo":"No",
+                  "nombre":"compromiso1",
+                  "estado":"pendiente",
+                  "codigo_SNIP":"83220",
+                  "descripcion":"-",
+                  "situacion_actual":"OPI MINSA opinó favorablemente (07.11.2016). MEF habilitó el sistema para que el GORE pueda dar viabilidad al PIP con un solo nivel de estudio por ser estratégico. PIP viable desde el 08.11.2016. Está en la etapa de perfil viable a cargo del GORE.El GORE ha convocado a concurso para elaboración de expediente técnico. La fecha de programación de la buena pro es el 21 de agosto 2017.",
+                  "prioridad":"alto",
+                  "riesgo":"si",
+                  "plazo_faltante":"-",
+                  "inversion":"s/.88,465,113",
+                  "moneda_tipo":"soles",
+                  "fecha_de_comppromiso":"24/12/2",
+                  "fecha_cumplimiento":"##/##/##"                    
+                }
+              ]             
+            },
+            {
+              "nombre":"Mesa de Trabajo para el desarrollo de las cuencas del Pastaza, Tigre, Corrientes y Marañón del Departamento de Loreto(4 Cuencas)",
+              "compromisos":[
+                {
+                  "nombre":".- Ampliación de nueva infraestructura de Hospital Virgen de Fátima de Chachapoyas",
+                  "plazo":"-",
+                  "riesgo":"No",
+                  "estado":"pendiente",
+                  "descripcion":"ddjhgkj",
+                  "situacion_actual":"Preparación para la puesta en operación. Obra no llegó a ser entregada y recepcionada por la DIRESA Amazonas porque falta implementar la central de aire comprimido en Neonatología. La empresa constructora se ha negado a la solicitud de PRONIS de hacerse cargo de la instalación de dicha central. Por ello, PRONIS evalúa iniciar un proceso judicial contra la empresa constructora y la empresa supervisora. Mientras tanto, el Gobierno Regional se hará cargo de la provisión de aire comprimido",
+                  "prioridad":"alto",
+                  "riesgo":"si",
+                  "plazo_faltante":"10 meses",
+                  "inversion":"S/ 16,621,251.42",
+                  "moneda_tipo":"usd",
+                  "fecha_de_comppromiso":"24/12/2",
+                  "fecha_cumplimiento":"##/##/##"
+                }
+              ]             
             }
-          } 
+          ]   
         },
-        "Convenios de Gestión": { 
-          "nombre":"Gore",
-          "pendientes":"##",
-          "cumplidos":"##",
-          "mesas_de_trabajo":{
-            "mesa aa":{
-              "compromiso1":{
-                "nombre":"compromiso1",
-                "estado":"pendiente",
-                "descripcion":"ddjhgkj",
-                "prioridad":"alto",
-                "riesgo":"si",
-                "plazo_faltante":"10 meses",
-                "inversion":"###",
-                "moneda_tipo":"usd",
-                "fecha_de_comppromiso":"24/12/2",
-                "fecha_cumplimiento":"##/##/##"
-              },
-              "compromiso2":{
-                "nombre":"compromiso2",
-                "estado":"pendiente",
-                "descripcion":"ddjhgkj",
-                "prioridad":"alto",
-                "riesgo":"si",
-                "plazo_faltante":"10 meses",
-                "inversion":"###",
-                "moneda_tipo":"usd",
-                "fecha_de_comppromiso":"24/12/2",
-                "fecha_cumplimiento":"##/##/##" 
-              }
+        "mesa_convenio": { 
+          "nombre":"Convenios de Gestión",
+          "pendientes":"2",
+          "cumplidos":"1",
+          "mesas_de_trabajo":[
+            {
+              "nombre":"Mesa de Trabajo para el desarrollo de las cuencas del Pastaza, Tigre, Corrientes y Marañón del Departamento de Loreto(4 Cuencas)",
+              "compromisos":[
+                {
+                  "nombre":".- Ampliación de nueva infraestructura de Hospital Virgen de Fátima de Chachapoyas",
+                  "plazo":"-",
+                  "riesgo":"No",
+                  "estado":"pendiente",
+                  "descripcion":"ddjhgkj",
+                  "situacion_actual":"Preparación para la puesta en operación. Obra no llegó a ser entregada y recepcionada por la DIRESA Amazonas porque falta implementar la central de aire comprimido en Neonatología. La empresa constructora se ha negado a la solicitud de PRONIS de hacerse cargo de la instalación de dicha central. Por ello, PRONIS evalúa iniciar un proceso judicial contra la empresa constructora y la empresa supervisora. Mientras tanto, el Gobierno Regional se hará cargo de la provisión de aire comprimido",
+                  "prioridad":"alto",
+                  "riesgo":"si",
+                  "plazo_faltante":"10 meses",
+                  "inversion":"S/ 16,621,251.42",
+                  "moneda_tipo":"usd",
+                  "fecha_de_comppromiso":"24/12/2",
+                  "fecha_cumplimiento":"##/##/##"
+                },
+                {
+                  "nombre":".2.- Sustitución de infraestructura y equipamiento en Hospital Santiago Apóstol",
+                  "plazo":"-",
+                  "riesgo":"No",
+                  "nombre":"compromiso1",
+                  "estado":"pendiente",
+                  "codigo_SNIP":"83220",
+                  "descripcion":"-",
+                  "situacion_actual":"OPI MINSA opinó favorablemente (07.11.2016). MEF habilitó el sistema para que el GORE pueda dar viabilidad al PIP con un solo nivel de estudio por ser estratégico. PIP viable desde el 08.11.2016. Está en la etapa de perfil viable a cargo del GORE.El GORE ha convocado a concurso para elaboración de expediente técnico. La fecha de programación de la buena pro es el 21 de agosto 2017.",
+                  "prioridad":"alto",
+                  "riesgo":"si",
+                  "plazo_faltante":"-",
+                  "inversion":"s/.88,465,113",
+                  "moneda_tipo":"soles",
+                  "fecha_de_comppromiso":"24/12/2",
+                  "fecha_cumplimiento":"##/##/##"                    
+                }
+              ]             
+            },
+            {
+              "nombre":"Mesa de Trabajo para el desarrollo de las cuencas del Pastaza, Tigre, Corrientes y Marañón del Departamento de Loreto(4 Cuencas)",
+              "compromisos":[
+                {
+                  "nombre":".- Ampliación de nueva infraestructura de Hospital Virgen de Fátima de Chachapoyas",
+                  "plazo":"-",
+                  "riesgo":"No",
+                  "estado":"pendiente",
+                  "descripcion":"ddjhgkj",
+                  "situacion_actual":"Preparación para la puesta en operación. Obra no llegó a ser entregada y recepcionada por la DIRESA Amazonas porque falta implementar la central de aire comprimido en Neonatología. La empresa constructora se ha negado a la solicitud de PRONIS de hacerse cargo de la instalación de dicha central. Por ello, PRONIS evalúa iniciar un proceso judicial contra la empresa constructora y la empresa supervisora. Mientras tanto, el Gobierno Regional se hará cargo de la provisión de aire comprimido",
+                  "prioridad":"alto",
+                  "riesgo":"si",
+                  "plazo_faltante":"10 meses",
+                  "inversion":"S/ 16,621,251.42",
+                  "moneda_tipo":"usd",
+                  "fecha_de_comppromiso":"24/12/2",
+                  "fecha_cumplimiento":"##/##/##"
+                }
+              ]             
             }
-          } 
+          ]  
         }
       }
     }

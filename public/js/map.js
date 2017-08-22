@@ -260,7 +260,70 @@ var convenio_template_cumplido ='<p>Cumplidos :{{cumplidos_conveniosgestion}}</p
 var total_pendientes= '<p class="align">Pendientes Totales : {{totalpendientes}}</p>';
 var total_cumplidos= '<p class="align">Compromisos Cumplidos :{{totalcumplidos}}</p>'; 
 
-var Departamento_Method;            
+var template_compromisos =  '<div id="accordion" role="tablist">'+
+                              '<div class="card">'+
+                                '<div class="card-header" role="tab" id="headingOne">'+
+                                  '<h5 class="mb-0">'+
+                                    '<a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">{{compromiso1}} <span class="pull-right">SI</span> <span class="pull-right" style="margin-right: 4rem">10 meses </span></a>'+
+                                  '</h5>'+
+                                '</div>'+
+
+                                '<div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">'+
+                                  '<div class="card-body">'+
+                                    '<div class="row">'+
+                                      '<div class="col-lg-6 col-md-6 col-sm-12 form-group">'+
+                                        '<label>Fecha de Inicio</label>'+
+                                        '<input type="number" name="fecha" value="{{ fecha_inicio }}">'+
+                                      '</div>'
+                                      '<div class="col-lg-6 col-md-6 col-sm-12 form-group">'+
+                                        '<label>Fecha cumplida</label>'+
+                                        '<input type="number" name="fecha" value="{{ fecha_cumplida }}">'+
+                                      '</div>'+
+                                    '</div>'+
+                                    '<div class="row">'+
+                                      '<div class="col-lg-4 col-md-4 col-sm-12 form-group">'+
+                                        '<label>Tiempo</label>'+
+                                        '<input type="number" name="fecha" value="{{ fecha_inicio }}">'+
+                                      '</div>'+
+                                      '<div class="col-lg-4 col-md-4 col-sm-12 form-group">'+
+                                        '<label>Plazo</label>'+
+                                        '<input type="number" name="fecha" value="{{ fecha_cumplida }}">'+
+                                      '</div>'+
+                                      '<div class="col-lg-4 col-md-4 col-sm-12 form-group">'+
+                                        '<label>Riesgo</label>'+
+                                        '<input type="text" name="fecha" value="{{ estado_cumplimiento }}">'+
+                                      '</div>'+
+                                    '</div>'+
+                                    '<div>'+
+                                      '<button type= "button" class="btn btn-primary" data-toggle="modal" data-target="#detalle_compromiso" id="detalle"> Más detalle</button>'+
+                                    '</div>'+
+                                  '</div>'+
+                                '</div>'+
+                              '</div>'+
+                            '</div> '; 
+
+var template_navPills ='<ul class="nav nav-pills nav_pills mb-3" id="pills-tab" role="tablist">'+
+                          '<li class="nav-item">'+
+                            '<a class="nav-link " id="pills_{{id}}_tab" data-toggle="pill" href="#pills_{{id}}" role="tab" aria-expanded="true"> {{pill_Nav}}</a>'+
+                          '</li>'+
+                        '</ul>'+
+                        '<div class="tab-content tab_content " id="pills-tabContent">'+ 
+                          '<div class="tab-pane fade show " id="pills_{{id}}" role="tabpanel">'+
+                            '<div class="col-lg-12 col-md-12 col-sm-12 " style="margin-bottom: 1rem">'+
+                              '<div class="list-group_mesa">'+
+                                '<li class="list-group-item list-group-item-action " id="list_{{id.list_group_pills}}"  aria-controls="home">{{mesa_info}}<a href="compromisos.html" class="compromisos float-right">Compromisos</a>'+
+                                '</li>'+
+                              '</div>'+
+                            '</div>'+
+                          '</div>'+
+                        '</div>'; 
+
+var titulos_mesas = '<div class="col-lg-12 col-md-12 col-sm-12 " style="margin-bottom: 1rem">'+
+                      '<div class="list-group_mesa">'+
+                        '<li class="list-group-item list-group-item-action " id="list_{{id.list_group_pills}}"  aria-controls="home">{{mesa_info}}<a href="compromisos.html" class="compromisos float-right">Compromisos</a>'+
+                        '</li>'+
+                      '</div>'+
+                    '</div>';      
 
 $(".land").click(function () {
   $(".land").removeClass("blue");
@@ -276,7 +339,9 @@ $(".landa").click(function () {
 
 for (var i = 0; i < regions.length; i++) {
   regions[i].click(function (e) {
+    $("#pills").empty();
     $(".desaparece").removeClass("hidden");
+    $("#pillls").removeClass("aparece");
     $("#pillls").addClass("hidden");
     $("#mesa_dialogo_container").empty();
     $("#gore_container").empty();
@@ -292,303 +357,47 @@ for (var i = 0; i < regions.length; i++) {
       success: function(response) {
         var data = response.departamento;
         var data_tipo= (data[region_data]);
-        var titulo_dialogo=$("#titulo_mesa").text();
-        var titulo_gore=$("#titulo_gore").text();
-        var titulo_muni=$("#titulo_muni").text();
-        var titulo_convenio=$("#titulo_convenio").text();
         var tipo=data_tipo.tipo;
-        var reemplazarTotalPendientes =total_pendientes.replace("{{totalpendientes}}", data_tipo.cumplidos_totales);
-        var reemplazarTotalCumplidos=total_cumplidos.replace("{{totalcumplidos}}",data_tipo.pendientes_totales);
-        var reemplazarPendientes= mesa_template_pendientes.replace("{{pendientes_mesadialogos}}" , tipo[titulo_dialogo].pendientes);
-        var reemplazarCumplidos=mesa_template_cumplido.replace("{{cumplidos_mesadialogos}}" , tipo[titulo_dialogo].cumplidos);
-        var gorereemplazarPendientes=gore_template_pendientes.replace("{{pendientes_gore}}",tipo[titulo_gore].pendientes);
-        var gorereemplazarCumplidos=gore_template_cumplido.replace("{{cumplidos_gore}}",tipo[titulo_gore].cumplidos);
-        var munireemplazarPendientes=muni_template_pendientes.replace("{{pendientes_muni}}",tipo[titulo_muni].pendientes);
-        var munireemplazarCumplidos=muni_template_cumplido.replace("{{cumplidos_muni}}",tipo[titulo_muni].cumplidos);
-        var convenioreemplazarPendientes=convenio_template_pendientes.replace("{{pendientes_conveniosgestion}}",tipo[titulo_convenio].pendientes);
-        var convenioreemplazarCumplidos=convenio_template_cumplido.replace("{{cumplidos_conveniosgestion}}",tipo[titulo_convenio].cumplidos);
+        console.log(tipo["mesa_dialogo"]["pendientes"]);
+        var reemplazarTotalPendientes =total_pendientes.replace("{{totalpendientes}}", data_tipo.pendientes_totales);
+        var reemplazarTotalCumplidos=total_cumplidos.replace("{{totalcumplidos}}",data_tipo.cumplidos_totales);
+        var reemplazarPendientes= mesa_template_pendientes.replace("{{pendientes_mesadialogos}}" , tipo["mesa_dialogo"]["pendientes"]);
+        var reemplazarCumplidos=mesa_template_cumplido.replace("{{cumplidos_mesadialogos}}" , tipo["mesa_dialogo"]["cumplidos"]);
+        var gorereemplazarPendientes=gore_template_pendientes.replace("{{pendientes_gore}}",tipo["mesa_gore"]["pendientes"]);
+        var gorereemplazarCumplidos=gore_template_cumplido.replace("{{cumplidos_gore}}",tipo["mesa_gore"]["cumplidos"]);
+        var munireemplazarPendientes=muni_template_pendientes.replace("{{pendientes_muni}}",tipo["mesa_muni"]["pendientes"]);
+        var munireemplazarCumplidos=muni_template_cumplido.replace("{{cumplidos_muni}}",tipo["mesa_muni"]["cumplidos"]);
+        var convenioreemplazarPendientes=convenio_template_pendientes.replace("{{pendientes_conveniosgestion}}",tipo["mesa_convenio"]["pendientes"]);
+        var convenioreemplazarCumplidos=convenio_template_cumplido.replace("{{cumplidos_conveniosgestion}}",tipo["mesa_convenio"]["cumplidos"]);
+
         $("#mesa_dialogo_container").append(reemplazarCumplidos , reemplazarPendientes);  
         $("#gore_container").append(gorereemplazarPendientes , gorereemplazarCumplidos);
         $("#muni_container").append(munireemplazarPendientes,munireemplazarCumplidos);
         $("#convenio_container").append(convenioreemplazarPendientes,convenioreemplazarCumplidos) ;
         $("#padre_totales").append(reemplazarTotalPendientes,reemplazarTotalCumplidos);
-        
-        $("#titulo_mesa").click(function(){
+
+        $(".azul").click(function(){
+          $("#pills").empty();
           $(".desaparece").addClass("hidden");
           $("#pillls").removeClass("hidden");
           $("#pillls").toggleClass("aparece");
-          var source   = $("#pillls-template").html();
-          var template = Handlebars.compile(source);
-          var context  = {
-            nav_pills: [
-              {
-                id: 'mesa',
-                pill_Nav :'Mesa de Trabajo',
-                list_group_pills:[
-                  {
-                    id: 'mesa1',
-                    mesa_info:'MESA DE TRABAJO PARA EL DESARROLLO DEL DPTO.AMAZONAS',
-                    compromisos:[{
-                      "compromiso1":{
-                        "nombre":".- Ampliación de nueva infraestructura de Hospital Virgen de Fátima de Chachapoyas",
-                        "plazo":"-",
-                        "riesgo":"No",
-                        "detalle":{
-                          "nombre":"compromiso1",
-                          "estado":"pendiente",
-                          "descripcion":"ddjhgkj",
-                          "situacion_actual":"Preparación para la puesta en operación. Obra no llegó a ser entregada y recepcionada por la DIRESA Amazonas porque falta implementar la central de aire comprimido en Neonatología. La empresa constructora se ha negado a la solicitud de PRONIS de hacerse cargo de la instalación de dicha central. Por ello, PRONIS evalúa iniciar un proceso judicial contra la empresa constructora y la empresa supervisora. Mientras tanto, el Gobierno Regional se hará cargo de la provisión de aire comprimido",
-                          "prioridad":"alto",
-                          "riesgo":"si",
-                          "plazo_faltante":"10 meses",
-                          "inversion":"S/ 16,621,251.42",
-                          "moneda_tipo":"usd",
-                          "fecha_de_comppromiso":"24/12/2",
-                          "fecha_cumplimiento":"##/##/##"
-                        }
-                      },
-                      "compromiso2":{
-                        "nombre":".2.- Sustitución de infraestructura y equipamiento en Hospital Santiago Apóstol",
-                        "plazo":"-",
-                        "riesgo":"No",
-                        "detalle":{
-                          "nombre":"compromiso1",
-                          "estado":"pendiente",
-                          "codigo_SNIP":"83220",
-                          "descripcion":"-",
-                          "situacion_actual":"OPI MINSA opinó favorablemente (07.11.2016). MEF habilitó el sistema para que el GORE pueda dar viabilidad al PIP con un solo nivel de estudio por ser estratégico. PIP viable desde el 08.11.2016. Está en la etapa de perfil viable a cargo del GORE.El GORE ha convocado a concurso para elaboración de expediente técnico. La fecha de programación de la buena pro es el 21 de agosto 2017.",
-                          "prioridad":"alto",
-                          "riesgo":"si",
-                          "plazo_faltante":"-",
-                          "inversion":"s/.88,465,113",
-                          "moneda_tipo":"soles",
-                          "fecha_de_comppromiso":"24/12/2",
-                          "fecha_cumplimiento":"##/##/##"
-                        }
-                      }
-                    }]
-                  },
-                  {
-                    id: 'mesa2',
-                    mesa_info:'MESA DE TUNDUZA',
-                    compromisos:[{
-                      "compromiso1":{
-                        "nombre":"1.- Gestionar ante el Sector Salud la incidencia y la atención de la presencia de VIH/SIDA en la zona",
-                        "plazo":"-",
-                        "riesgo":"No",
-                        "detalle":{
-                          "nombre":"compromiso1",
-                          "estado":"pendiente",
-                          "descripcion":"-",
-                          "situacion_actual":"Red de Salud Condorcanqui reportó que el equipo de brigada visitó la comunidad la última semana de febrero 2017 y realizó un total de 208 atenciones de tamizaje y despistaje de VIH en la población general entre los 10 a 65 años de edad. De estas atenciones, 57 correspondieron a personas procedentes del Centro Tunduza y 151 a personas procedentes de Puerto Tunduza.",
-                          "prioridad":"alto",
-                          "riesgo":"si",
-                          "plazo_faltante":"10 meses",
-                          "inversion":"-",
-                          "moneda_tipo":"usd",
-                          "fecha_de_comppromiso":"24/12/2",
-                          "fecha_cumplimiento":"##/##/##"
-                        }
-                      },
-                      "compromiso2":{
-                        "nombre":".2.- Promover charlas sobre temas ambientales con la participación del Ministerio de Ambiente y el Ministerio de Salud",
-                        "plazo":"-",
-                        "riesgo":"No",
-                        "detalle":{
-                          "nombre":"compromiso1",
-                          "estado":"pendiente",
-                          "codigo_SNIP":"83220",
-                          "descripcion":"-",
-                          "situacion_actual":"En reunión de coordinación en PCM del 06/03/2017, se acordó que el equipo técnico de Ministerio de Ambiente se hará cargo de las charlas, por lo que no será necesaria la participación de DIGESA. ",
-                          "prioridad":"alto",
-                          "riesgo":"si",
-                          "plazo_faltante":"-",
-                          "inversion":"s/.-",
-                          "moneda_tipo":"soles",
-                          "fecha_de_comppromiso":"24/12/2",
-                          "fecha_cumplimiento":"##/##/##"
-                        }
-                      }
-                    }]
-                  },
-                ]
-              },
-              {
-                id: 'gore',
-                pill_Nav :'Gore Ejeutivo',
-                list_group_pills:[
-                  {
-                    id: 'compromiso11',
-                    mesa_info:'mesañlkjklj1'
-                  },
-                  {
-                    id: 'compromiso12',
-                    mesa_info:'meshujkhjka2'
-                  },
-                  {
-                    id: 'compromiso13',
-                    mesa_info:'mesajhgj hjg3'
-                  },
-                  {
-                    id: 'compromiso14',
-                    mesa_info:'mdfg fgdsa4'
-                  }
+          console.log(tipo);
+          var data_mesa = tipo[$(this).data("tipo")]["mesas_de_trabajo"];
+          console.log(data_mesa);
+          var resultado="";
+          for (var i in data_mesa){
+            var reemplazarMesaTitulo = titulos_mesas.replace("{{mesa_info}}", data_mesa[i].nombre);
+            $("#pillls").append(reemplazarMesaTitulo);
+             console.log(data_mesa[i].nombre);
+          }       
+          
+        });
 
-                ]
-              },
-              {
-                id: 'muni',
-                pill_Nav :'Muni Ejecutivo'
-              },
-              {
-                id: 'muni',
-                pill_Nav :'Convenio de Gestion'
-              }
-              
-            ]
-          };
-          $('#pillls').html(template(context)); 
-          var primer_pills=$("#pills-tab").children().first().children();
-          var primer_div=$("#pills-tabContent").children().first();
-          console.log(primer_div);
-          $(primer_pills).toggleClass("active");
-          $(primer_div).toggleClass("active");
-        })
-        $(".compromisos").click(function(){
+        $(".list-group-item").click(function(){
           $("#compromisos").removeClass("hidden");
           $("#pillls").addClass("hidden");
-          var source   = $("#compromisos").html();
-          var template = Handlebars.compile(source);
-          var context  = {
-            compromisos: [
-              {
-                id: 'mesa',
-                pill_Nav :'Mesa de Trabajo',
-                list_group_pills:[
-                  {
-                    id: 'mesa1',
-                    mesa_info:'MESA DE TRABAJO PARA EL DESARROLLO DEL DPTO.AMAZONAS',
-                    compromisos:[{
-                      "compromiso1":{
-                        "nombre":".- Ampliación de nueva infraestructura de Hospital Virgen de Fátima de Chachapoyas",
-                        "plazo":"-",
-                        "riesgo":"No",
-                        "detalle":{
-                          "nombre":"compromiso1",
-                          "estado":"pendiente",
-                          "descripcion":"ddjhgkj",
-                          "situacion_actual":"Preparación para la puesta en operación. Obra no llegó a ser entregada y recepcionada por la DIRESA Amazonas porque falta implementar la central de aire comprimido en Neonatología. La empresa constructora se ha negado a la solicitud de PRONIS de hacerse cargo de la instalación de dicha central. Por ello, PRONIS evalúa iniciar un proceso judicial contra la empresa constructora y la empresa supervisora. Mientras tanto, el Gobierno Regional se hará cargo de la provisión de aire comprimido",
-                          "prioridad":"alto",
-                          "riesgo":"si",
-                          "plazo_faltante":"10 meses",
-                          "inversion":"S/ 16,621,251.42",
-                          "moneda_tipo":"usd",
-                          "fecha_de_comppromiso":"24/12/2",
-                          "fecha_cumplimiento":"##/##/##"
-                        }
-                      },
-                      "compromiso2":{
-                        "nombre":".2.- Sustitución de infraestructura y equipamiento en Hospital Santiago Apóstol",
-                        "plazo":"-",
-                        "riesgo":"No",
-                        "detalle":{
-                          "nombre":"compromiso1",
-                          "estado":"pendiente",
-                          "codigo_SNIP":"83220",
-                          "descripcion":"-",
-                          "situacion_actual":"OPI MINSA opinó favorablemente (07.11.2016). MEF habilitó el sistema para que el GORE pueda dar viabilidad al PIP con un solo nivel de estudio por ser estratégico. PIP viable desde el 08.11.2016. Está en la etapa de perfil viable a cargo del GORE.El GORE ha convocado a concurso para elaboración de expediente técnico. La fecha de programación de la buena pro es el 21 de agosto 2017.",
-                          "prioridad":"alto",
-                          "riesgo":"si",
-                          "plazo_faltante":"-",
-                          "inversion":"s/.88,465,113",
-                          "moneda_tipo":"soles",
-                          "fecha_de_comppromiso":"24/12/2",
-                          "fecha_cumplimiento":"##/##/##"
-                        }
-                      }
-                    }]
-                  },
-                  {
-                    id: 'mesa2',
-                    mesa_info:'MESA DE TUNDUZA',
-                    compromisos:[{
-                      "compromiso1":{
-                        "nombre":"1.- Gestionar ante el Sector Salud la incidencia y la atención de la presencia de VIH/SIDA en la zona",
-                        "plazo":"-",
-                        "riesgo":"No",
-                        "detalle":{
-                          "nombre":"compromiso1",
-                          "estado":"pendiente",
-                          "descripcion":"-",
-                          "situacion_actual":"Red de Salud Condorcanqui reportó que el equipo de brigada visitó la comunidad la última semana de febrero 2017 y realizó un total de 208 atenciones de tamizaje y despistaje de VIH en la población general entre los 10 a 65 años de edad. De estas atenciones, 57 correspondieron a personas procedentes del Centro Tunduza y 151 a personas procedentes de Puerto Tunduza.",
-                          "prioridad":"alto",
-                          "riesgo":"si",
-                          "plazo_faltante":"10 meses",
-                          "inversion":"-",
-                          "moneda_tipo":"usd",
-                          "fecha_de_comppromiso":"24/12/2",
-                          "fecha_cumplimiento":"##/##/##"
-                        }
-                      },
-                      "compromiso2":{
-                        "nombre":".2.- Promover charlas sobre temas ambientales con la participación del Ministerio de Ambiente y el Ministerio de Salud",
-                        "plazo":"-",
-                        "riesgo":"No",
-                        "detalle":{
-                          "nombre":"compromiso1",
-                          "estado":"pendiente",
-                          "codigo_SNIP":"83220",
-                          "descripcion":"-",
-                          "situacion_actual":"En reunión de coordinación en PCM del 06/03/2017, se acordó que el equipo técnico de Ministerio de Ambiente se hará cargo de las charlas, por lo que no será necesaria la participación de DIGESA. ",
-                          "prioridad":"alto",
-                          "riesgo":"si",
-                          "plazo_faltante":"-",
-                          "inversion":"s/.-",
-                          "moneda_tipo":"soles",
-                          "fecha_de_comppromiso":"24/12/2",
-                          "fecha_cumplimiento":"##/##/##"
-                        }
-                      }
-                    }]
-                  },
-                ]
-              },
-              {
-                id: 'gore',
-                pill_Nav :'Gore Ejeutivo',
-                list_group_pills:[
-                  {
-                    id: 'compromiso11',
-                    mesa_info:'mesañlkjklj1'
-                  },
-                  {
-                    id: 'compromiso12',
-                    mesa_info:'meshujkhjka2'
-                  },
-                  {
-                    id: 'compromiso13',
-                    mesa_info:'mesajhgj hjg3'
-                  },
-                  {
-                    id: 'compromiso14',
-                    mesa_info:'mdfg fgdsa4'
-                  }
-
-                ]
-              },
-              {
-                id: 'muni',
-                pill_Nav :'Muni Ejecutivo'
-              },
-              {
-                id: 'muni',
-                pill_Nav :'Convenio de Gestion'
-              }
-              
-            ]
-          };
-          $("#compromisos").html()(template(context));
-        })
+          
+        });       
       },
       error: function(error) {
         console.log(error);
@@ -598,7 +407,6 @@ for (var i = 0; i < regions.length; i++) {
 
   $(document).ready(function(){
     $(".landa").addClass("blue");  
-    Departamento_Method.loadDatos();
   });
   // Showing off
   regions[i].mouseover(function (e) {
