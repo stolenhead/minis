@@ -10,145 +10,133 @@
           "nombre":"Mesa de Diálogo",
           "pendientes":"##",
           "cumplidos":"##",
-          "mesas_de_trabajo":[
-            {
-              "nombre":"mesa aa",
-              "compromisos":[
-                {
-                  "nombre":"compromiso1",
-                  "estado":"pendiente",
-                  "descripcion":"ddjhgkj",
-                  "prioridad":"alto",
-                  "riesgo":"si",
-                  "plazo_faltante":"10 meses",
-                  "inversion":"###",
-                  "moneda_tipo":"usd",
-                  "fecha_de_comppromiso":"24/12/2",
-                  "fecha_cumplimiento":"##/##/##"
-                },
-                {
-                  "nombre":"compromiso2",
-                  "estado":"pendiente",
-                  "descripcion":"ddjhgkj",
-                  "prioridad":"alto",
-                  "riesgo":"si",
-                  "plazo_faltante":"10 meses",
-                  "inversion":"###",
-                  "moneda_tipo":"usd",
-                  "fecha_de_comppromiso":"24/12/2",
-                  "fecha_cumplimiento":"##/##/##"
-                }
-              ]
+          "mesas_de_trabajo":{
+            "mesa aa":{
+              "compromiso1":{
+                "nombre":"compromiso1",
+                "estado":"pendiente",
+                "descripcion":"ddjhgkj",
+                "prioridad":"alto",
+                "riesgo":"si",
+                "plazo_faltante":"10 meses",
+                "inversion":"###",
+                "moneda_tipo":"usd",
+                "fecha_de_comppromiso":"24/12/2",
+                "fecha_cumplimiento":"##/##/##"
+              },
+              "compromiso2":{
+                "nombre":"compromiso2",
+                "estado":"pendiente",
+                "descripcion":"ddjhgkj",
+                "prioridad":"alto",
+                "riesgo":"si",
+                "plazo_faltante":"10 meses",
+                "inversion":"###",
+                "moneda_tipo":"usd",
+                "fecha_de_comppromiso":"24/12/2",
+                "fecha_cumplimiento":"##/##/##" 
+              }
             }
-          ]
+          }          
         },
         "Gore Ejecutivo": { 
           "nombre":"Gore",
           "pendientes":"##",
           "cumplidos":"##",
-          "mesas_de_trabajo":[
-            {
-              "nombre":"mesa aa",
-              "compromisos":[
-                {
-                  "nombre":"compromiso1",
-                  "estado":"pendiente",
-                  "descripcion":"ddjhgkj",
-                  "prioridad":"alto",
-                  "riesgo":"si",
-                  "plazo_faltante":"10 meses",
-                  "inversion":"###",
-                  "moneda_tipo":"usd",
-                  "fecha_de_comppromiso":"24/12/2",
-                  "fecha_cumplimiento":"##/##/##"
-                },
-                {
-                  "nombre":"compromiso2",
-                  "estado":"pendiente",
-                  "descripcion":"ddjhgkj",
-                  "prioridad":"alto",
-                  "riesgo":"si",
-                  "plazo_faltante":"10 meses",
-                  "inversion":"###",
-                  "moneda_tipo":"usd",
-                  "fecha_de_comppromiso":"24/12/2",
-                  "fecha_cumplimiento":"##/##/##"
-                }
-              ]
+          "mesas_de_trabajo":{
+            "mesa aa":{
+              "compromiso1":{
+                "nombre":"compromiso1",
+                "estado":"pendiente",
+                "descripcion":"ddjhgkj",
+                "prioridad":"alto",
+                "riesgo":"si",
+                "plazo_faltante":"10 meses",
+                "inversion":"###",
+                "moneda_tipo":"usd",
+                "fecha_de_comppromiso":"24/12/2",
+                "fecha_cumplimiento":"##/##/##"
+              },
+              "compromiso2":{
+                "nombre":"compromiso2",
+                "estado":"pendiente",
+                "descripcion":"ddjhgkj",
+                "prioridad":"alto",
+                "riesgo":"si",
+                "plazo_faltante":"10 meses",
+                "inversion":"###",
+                "moneda_tipo":"usd",
+                "fecha_de_comppromiso":"24/12/2",
+                "fecha_cumplimiento":"##/##/##" 
+              }
             }
-          ]
+          } 
         },
         "Muni Ejecutivo": { 
           "nombre":"Gore",
           "pendientes":"##",
           "cumplidos":"##",
-          "mesas_de_trabajo":[
-            {
-              "nombre":"mesa aa",
-              "compromisos":[
-                {
-                  "nombre":"compromiso1",
-                  "estado":"pendiente",
-                  "descripcion":"ddjhgkj",
-                  "prioridad":"alto",
-                  "riesgo":"si",
-                  "plazo_faltante":"10 meses",
-                  "inversion":"###",
-                  "moneda_tipo":"usd",
-                  "fecha_de_comppromiso":"24/12/2",
-                  "fecha_cumplimiento":"##/##/##"
-                },
-                {
-                  "nombre":"compromiso2",
-                  "estado":"pendiente",
-                  "descripcion":"ddjhgkj",
-                  "prioridad":"alto",
-                  "riesgo":"si",
-                  "plazo_faltante":"10 meses",
-                  "inversion":"###",
-                  "moneda_tipo":"usd",
-                  "fecha_de_comppromiso":"24/12/2",
-                  "fecha_cumplimiento":"##/##/##"
-                }
-              ]
+          "mesas_de_trabajo":{
+            "mesa aa":{
+              "compromiso1":{
+                "nombre":"compromiso1",
+                "estado":"pendiente",
+                "descripcion":"ddjhgkj",
+                "prioridad":"alto",
+                "riesgo":"si",
+                "plazo_faltante":"10 meses",
+                "inversion":"###",
+                "moneda_tipo":"usd",
+                "fecha_de_comppromiso":"24/12/2",
+                "fecha_cumplimiento":"##/##/##"
+              },
+              "compromiso2":{
+                "nombre":"compromiso2",
+                "estado":"pendiente",
+                "descripcion":"ddjhgkj",
+                "prioridad":"alto",
+                "riesgo":"si",
+                "plazo_faltante":"10 meses",
+                "inversion":"###",
+                "moneda_tipo":"usd",
+                "fecha_de_comppromiso":"24/12/2",
+                "fecha_cumplimiento":"##/##/##" 
+              }
             }
-          ]
+          } 
         },
         "Convenios de Gestión": { 
           "nombre":"Gore",
           "pendientes":"##",
           "cumplidos":"##",
-          "mesas_de_trabajo":[
-            {
-              "nombre":"mesa aa",
-              "compromisos":[
-                {
-                  "nombre":"compromiso1",
-                  "estado":"pendiente",
-                  "descripcion":"ddjhgkj",
-                  "prioridad":"alto",
-                  "riesgo":"si",
-                  "plazo_faltante":"10 meses",
-                  "inversion":"###",
-                  "moneda_tipo":"usd",
-                  "fecha_de_comppromiso":"24/12/2",
-                  "fecha_cumplimiento":"##/##/##"
-                },
-                {
-                  "nombre":"compromiso2",
-                  "estado":"pendiente",
-                  "descripcion":"ddjhgkj",
-                  "prioridad":"alto",
-                  "riesgo":"si",
-                  "plazo_faltante":"10 meses",
-                  "inversion":"###",
-                  "moneda_tipo":"usd",
-                  "fecha_de_comppromiso":"24/12/2",
-                  "fecha_cumplimiento":"##/##/##"
-                }
-              ]
+          "mesas_de_trabajo":{
+            "mesa aa":{
+              "compromiso1":{
+                "nombre":"compromiso1",
+                "estado":"pendiente",
+                "descripcion":"ddjhgkj",
+                "prioridad":"alto",
+                "riesgo":"si",
+                "plazo_faltante":"10 meses",
+                "inversion":"###",
+                "moneda_tipo":"usd",
+                "fecha_de_comppromiso":"24/12/2",
+                "fecha_cumplimiento":"##/##/##"
+              },
+              "compromiso2":{
+                "nombre":"compromiso2",
+                "estado":"pendiente",
+                "descripcion":"ddjhgkj",
+                "prioridad":"alto",
+                "riesgo":"si",
+                "plazo_faltante":"10 meses",
+                "inversion":"###",
+                "moneda_tipo":"usd",
+                "fecha_de_comppromiso":"24/12/2",
+                "fecha_cumplimiento":"##/##/##" 
+              }
             }
-          ]
+          } 
         }
       }
     },
@@ -160,147 +148,135 @@
       "tipo":{
         "Mesa de Diálogo": { 
           "nombre":"Mesa de Diálogo",
-          "pendientes":"77",
+          "pendientes":"##",
           "cumplidos":"##",
-          "mesas_de_trabajo":[
-            {
-              "nombre":"mesa aa",
-              "compromisos":[
-                {
-                  "nombre":"compromiso1",
-                  "estado":"pendiente",
-                  "descripcion":"ddjhgkj",
-                  "prioridad":"alto",
-                  "riesgo":"si",
-                  "plazo_faltante":"10 meses",
-                  "inversion":"###",
-                  "moneda_tipo":"usd",
-                  "fecha_de_comppromiso":"24/12/2",
-                  "fecha_cumplimiento":"##/##/##"
-                },
-                {
-                  "nombre":"compromiso2",
-                  "estado":"pendiente",
-                  "descripcion":"ddjhgkj",
-                  "prioridad":"alto",
-                  "riesgo":"si",
-                  "plazo_faltante":"10 meses",
-                  "inversion":"###",
-                  "moneda_tipo":"usd",
-                  "fecha_de_comppromiso":"24/12/2",
-                  "fecha_cumplimiento":"##/##/##"
-                }
-              ]
-            }
-          ]
+          "mesas_de_trabajo":{
+            "mesa aa":[{
+              "compromiso1":{
+                "nombre":"compromiso1",
+                "estado":"pendiente",
+                "descripcion":"ddjhgkj",
+                "prioridad":"alto",
+                "riesgo":"si",
+                "plazo_faltante":"10 meses",
+                "inversion":"###",
+                "moneda_tipo":"usd",
+                "fecha_de_comppromiso":"24/12/2",
+                "fecha_cumplimiento":"##/##/##"
+              },
+              "compromiso2":{
+                "nombre":"compromiso2",
+                "estado":"pendiente",
+                "descripcion":"ddjhgkj",
+                "prioridad":"alto",
+                "riesgo":"si",
+                "plazo_faltante":"10 meses",
+                "inversion":"###",
+                "moneda_tipo":"usd",
+                "fecha_de_comppromiso":"24/12/2",
+                "fecha_cumplimiento":"##/##/##" 
+              }
+            }]
+          }          
         },
         "Gore Ejecutivo": { 
           "nombre":"Gore",
-          "pendientes":"55",
+          "pendientes":"##",
           "cumplidos":"##",
-          "mesas_de_trabajo":[
-            {
-              "nombre":"mesa aa",
-              "compromisos":[
-                {
-                  "nombre":"compromiso1",
-                  "estado":"pendiente",
-                  "descripcion":"ddjhgkj",
-                  "prioridad":"alto",
-                  "riesgo":"si",
-                  "plazo_faltante":"10 meses",
-                  "inversion":"###",
-                  "moneda_tipo":"usd",
-                  "fecha_de_comppromiso":"24/12/2",
-                  "fecha_cumplimiento":"##/##/##"
-                },
-                {
-                  "nombre":"compromiso2",
-                  "estado":"pendiente",
-                  "descripcion":"ddjhgkj",
-                  "prioridad":"alto",
-                  "riesgo":"si",
-                  "plazo_faltante":"10 meses",
-                  "inversion":"###",
-                  "moneda_tipo":"usd",
-                  "fecha_de_comppromiso":"24/12/2",
-                  "fecha_cumplimiento":"##/##/##"
-                }
-              ]
+          "mesas_de_trabajo":{
+            "mesa aa":{
+              "compromiso1":{
+                "nombre":"compromiso1",
+                "estado":"pendiente",
+                "descripcion":"ddjhgkj",
+                "prioridad":"alto",
+                "riesgo":"si",
+                "plazo_faltante":"10 meses",
+                "inversion":"###",
+                "moneda_tipo":"usd",
+                "fecha_de_comppromiso":"24/12/2",
+                "fecha_cumplimiento":"##/##/##"
+              },
+              "compromiso2":{
+                "nombre":"compromiso2",
+                "estado":"pendiente",
+                "descripcion":"ddjhgkj",
+                "prioridad":"alto",
+                "riesgo":"si",
+                "plazo_faltante":"10 meses",
+                "inversion":"###",
+                "moneda_tipo":"usd",
+                "fecha_de_comppromiso":"24/12/2",
+                "fecha_cumplimiento":"##/##/##" 
+              }
             }
-          ]
+          } 
         },
         "Muni Ejecutivo": { 
           "nombre":"Gore",
           "pendientes":"##",
           "cumplidos":"##",
-          "mesas_de_trabajo":[
-            {
-              "nombre":"mesa aa",
-              "compromisos":[
-                {
-                  "nombre":"compromiso1",
-                  "estado":"pendiente",
-                  "descripcion":"ddjhgkj",
-                  "prioridad":"alto",
-                  "riesgo":"si",
-                  "plazo_faltante":"10 meses",
-                  "inversion":"###",
-                  "moneda_tipo":"usd",
-                  "fecha_de_comppromiso":"24/12/2",
-                  "fecha_cumplimiento":"##/##/##"
-                },
-                {
-                  "nombre":"compromiso2",
-                  "estado":"pendiente",
-                  "descripcion":"ddjhgkj",
-                  "prioridad":"alto",
-                  "riesgo":"si",
-                  "plazo_faltante":"10 meses",
-                  "inversion":"###",
-                  "moneda_tipo":"usd",
-                  "fecha_de_comppromiso":"24/12/2",
-                  "fecha_cumplimiento":"##/##/##"
-                }
-              ]
+          "mesas_de_trabajo":{
+            "mesa aa":{
+              "compromiso1":{
+                "nombre":"compromiso1",
+                "estado":"pendiente",
+                "descripcion":"ddjhgkj",
+                "prioridad":"alto",
+                "riesgo":"si",
+                "plazo_faltante":"10 meses",
+                "inversion":"###",
+                "moneda_tipo":"usd",
+                "fecha_de_comppromiso":"24/12/2",
+                "fecha_cumplimiento":"##/##/##"
+              },
+              "compromiso2":{
+                "nombre":"compromiso2",
+                "estado":"pendiente",
+                "descripcion":"ddjhgkj",
+                "prioridad":"alto",
+                "riesgo":"si",
+                "plazo_faltante":"10 meses",
+                "inversion":"###",
+                "moneda_tipo":"usd",
+                "fecha_de_comppromiso":"24/12/2",
+                "fecha_cumplimiento":"##/##/##" 
+              }
             }
-          ]
+          } 
         },
         "Convenios de Gestión": { 
           "nombre":"Gore",
           "pendientes":"##",
           "cumplidos":"##",
-          "mesas_de_trabajo":[
-            {
-              "nombre":"mesa aa",
-              "compromisos":[
-                {
-                  "nombre":"compromiso1",
-                  "estado":"pendiente",
-                  "descripcion":"ddjhgkj",
-                  "prioridad":"alto",
-                  "riesgo":"si",
-                  "plazo_faltante":"10 meses",
-                  "inversion":"###",
-                  "moneda_tipo":"usd",
-                  "fecha_de_comppromiso":"24/12/2",
-                  "fecha_cumplimiento":"##/##/##"
-                },
-                {
-                  "nombre":"compromiso2",
-                  "estado":"pendiente",
-                  "descripcion":"ddjhgkj",
-                  "prioridad":"alto",
-                  "riesgo":"si",
-                  "plazo_faltante":"10 meses",
-                  "inversion":"###",
-                  "moneda_tipo":"usd",
-                  "fecha_de_comppromiso":"24/12/2",
-                  "fecha_cumplimiento":"##/##/##"
-                }
-              ]
+          "mesas_de_trabajo":{
+            "mesa aa":{
+              "compromiso1":{
+                "nombre":"compromiso1",
+                "estado":"pendiente",
+                "descripcion":"ddjhgkj",
+                "prioridad":"alto",
+                "riesgo":"si",
+                "plazo_faltante":"10 meses",
+                "inversion":"###",
+                "moneda_tipo":"usd",
+                "fecha_de_comppromiso":"24/12/2",
+                "fecha_cumplimiento":"##/##/##"
+              },
+              "compromiso2":{
+                "nombre":"compromiso2",
+                "estado":"pendiente",
+                "descripcion":"ddjhgkj",
+                "prioridad":"alto",
+                "riesgo":"si",
+                "plazo_faltante":"10 meses",
+                "inversion":"###",
+                "moneda_tipo":"usd",
+                "fecha_de_comppromiso":"24/12/2",
+                "fecha_cumplimiento":"##/##/##" 
+              }
             }
-          ]
+          } 
         }
       }
     }

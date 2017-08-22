@@ -258,7 +258,9 @@ var convenio_template_pendientes= '<p>Pendientes : {{pendientes_conveniosgestion
 var convenio_template_cumplido ='<p>Cumplidos :{{cumplidos_conveniosgestion}}</p>';
  
 var total_pendientes= '<p class="align">Pendientes Totales : {{totalpendientes}}</p>';
-var total_cumplidos= '<p class="align">Compromisos Cumplidos :{{totalcumplidos}}</p>';             
+var total_cumplidos= '<p class="align">Compromisos Cumplidos :{{totalcumplidos}}</p>'; 
+
+var Departamento_Method;            
 
 $(".land").click(function () {
   $(".land").removeClass("blue");
@@ -271,12 +273,11 @@ $(".landa").click(function () {
   $(".landa").addClass("blue");
 });
 
-$(document).ready(function(){
-  $(".landa").addClass("blue");  
-});
 
 for (var i = 0; i < regions.length; i++) {
   regions[i].click(function (e) {
+    $(".desaparece").removeClass("hidden");
+    $("#pillls").addClass("hidden");
     $("#mesa_dialogo_container").empty();
     $("#gore_container").empty();
     $("#muni_container").empty();
@@ -311,15 +312,293 @@ for (var i = 0; i < regions.length; i++) {
         $("#muni_container").append(munireemplazarPendientes,munireemplazarCumplidos);
         $("#convenio_container").append(convenioreemplazarPendientes,convenioreemplazarCumplidos) ;
         $("#padre_totales").append(reemplazarTotalPendientes,reemplazarTotalCumplidos);
-
+        
         $("#titulo_mesa").click(function(){
-          $(".desaparece").toggleClass("hidden");
+          $(".desaparece").addClass("hidden");
+          $("#pillls").removeClass("hidden");
+          $("#pillls").toggleClass("aparece");
+          var source   = $("#pillls-template").html();
+          var template = Handlebars.compile(source);
+          var context  = {
+            nav_pills: [
+              {
+                id: 'mesa',
+                pill_Nav :'Mesa de Trabajo',
+                list_group_pills:[
+                  {
+                    id: 'mesa1',
+                    mesa_info:'MESA DE TRABAJO PARA EL DESARROLLO DEL DPTO.AMAZONAS',
+                    compromisos:[{
+                      "compromiso1":{
+                        "nombre":".- Ampliación de nueva infraestructura de Hospital Virgen de Fátima de Chachapoyas",
+                        "plazo":"-",
+                        "riesgo":"No",
+                        "detalle":{
+                          "nombre":"compromiso1",
+                          "estado":"pendiente",
+                          "descripcion":"ddjhgkj",
+                          "situacion_actual":"Preparación para la puesta en operación. Obra no llegó a ser entregada y recepcionada por la DIRESA Amazonas porque falta implementar la central de aire comprimido en Neonatología. La empresa constructora se ha negado a la solicitud de PRONIS de hacerse cargo de la instalación de dicha central. Por ello, PRONIS evalúa iniciar un proceso judicial contra la empresa constructora y la empresa supervisora. Mientras tanto, el Gobierno Regional se hará cargo de la provisión de aire comprimido",
+                          "prioridad":"alto",
+                          "riesgo":"si",
+                          "plazo_faltante":"10 meses",
+                          "inversion":"S/ 16,621,251.42",
+                          "moneda_tipo":"usd",
+                          "fecha_de_comppromiso":"24/12/2",
+                          "fecha_cumplimiento":"##/##/##"
+                        }
+                      },
+                      "compromiso2":{
+                        "nombre":".2.- Sustitución de infraestructura y equipamiento en Hospital Santiago Apóstol",
+                        "plazo":"-",
+                        "riesgo":"No",
+                        "detalle":{
+                          "nombre":"compromiso1",
+                          "estado":"pendiente",
+                          "codigo_SNIP":"83220",
+                          "descripcion":"-",
+                          "situacion_actual":"OPI MINSA opinó favorablemente (07.11.2016). MEF habilitó el sistema para que el GORE pueda dar viabilidad al PIP con un solo nivel de estudio por ser estratégico. PIP viable desde el 08.11.2016. Está en la etapa de perfil viable a cargo del GORE.El GORE ha convocado a concurso para elaboración de expediente técnico. La fecha de programación de la buena pro es el 21 de agosto 2017.",
+                          "prioridad":"alto",
+                          "riesgo":"si",
+                          "plazo_faltante":"-",
+                          "inversion":"s/.88,465,113",
+                          "moneda_tipo":"soles",
+                          "fecha_de_comppromiso":"24/12/2",
+                          "fecha_cumplimiento":"##/##/##"
+                        }
+                      }
+                    }]
+                  },
+                  {
+                    id: 'mesa2',
+                    mesa_info:'MESA DE TUNDUZA',
+                    compromisos:[{
+                      "compromiso1":{
+                        "nombre":"1.- Gestionar ante el Sector Salud la incidencia y la atención de la presencia de VIH/SIDA en la zona",
+                        "plazo":"-",
+                        "riesgo":"No",
+                        "detalle":{
+                          "nombre":"compromiso1",
+                          "estado":"pendiente",
+                          "descripcion":"-",
+                          "situacion_actual":"Red de Salud Condorcanqui reportó que el equipo de brigada visitó la comunidad la última semana de febrero 2017 y realizó un total de 208 atenciones de tamizaje y despistaje de VIH en la población general entre los 10 a 65 años de edad. De estas atenciones, 57 correspondieron a personas procedentes del Centro Tunduza y 151 a personas procedentes de Puerto Tunduza.",
+                          "prioridad":"alto",
+                          "riesgo":"si",
+                          "plazo_faltante":"10 meses",
+                          "inversion":"-",
+                          "moneda_tipo":"usd",
+                          "fecha_de_comppromiso":"24/12/2",
+                          "fecha_cumplimiento":"##/##/##"
+                        }
+                      },
+                      "compromiso2":{
+                        "nombre":".2.- Promover charlas sobre temas ambientales con la participación del Ministerio de Ambiente y el Ministerio de Salud",
+                        "plazo":"-",
+                        "riesgo":"No",
+                        "detalle":{
+                          "nombre":"compromiso1",
+                          "estado":"pendiente",
+                          "codigo_SNIP":"83220",
+                          "descripcion":"-",
+                          "situacion_actual":"En reunión de coordinación en PCM del 06/03/2017, se acordó que el equipo técnico de Ministerio de Ambiente se hará cargo de las charlas, por lo que no será necesaria la participación de DIGESA. ",
+                          "prioridad":"alto",
+                          "riesgo":"si",
+                          "plazo_faltante":"-",
+                          "inversion":"s/.-",
+                          "moneda_tipo":"soles",
+                          "fecha_de_comppromiso":"24/12/2",
+                          "fecha_cumplimiento":"##/##/##"
+                        }
+                      }
+                    }]
+                  },
+                ]
+              },
+              {
+                id: 'gore',
+                pill_Nav :'Gore Ejeutivo',
+                list_group_pills:[
+                  {
+                    id: 'compromiso11',
+                    mesa_info:'mesañlkjklj1'
+                  },
+                  {
+                    id: 'compromiso12',
+                    mesa_info:'meshujkhjka2'
+                  },
+                  {
+                    id: 'compromiso13',
+                    mesa_info:'mesajhgj hjg3'
+                  },
+                  {
+                    id: 'compromiso14',
+                    mesa_info:'mdfg fgdsa4'
+                  }
+
+                ]
+              },
+              {
+                id: 'muni',
+                pill_Nav :'Muni Ejecutivo'
+              },
+              {
+                id: 'muni',
+                pill_Nav :'Convenio de Gestion'
+              }
+              
+            ]
+          };
+          $('#pillls').html(template(context)); 
+          var primer_pills=$("#pills-tab").children().first().children();
+          var primer_div=$("#pills-tabContent").children().first();
+          console.log(primer_div);
+          $(primer_pills).toggleClass("active");
+          $(primer_div).toggleClass("active");
+        })
+        $(".compromisos").click(function(){
+          $("#compromisos").removeClass("hidden");
+          $("#pillls").addClass("hidden");
+          var source   = $("#compromisos").html();
+          var template = Handlebars.compile(source);
+          var context  = {
+            compromisos: [
+              {
+                id: 'mesa',
+                pill_Nav :'Mesa de Trabajo',
+                list_group_pills:[
+                  {
+                    id: 'mesa1',
+                    mesa_info:'MESA DE TRABAJO PARA EL DESARROLLO DEL DPTO.AMAZONAS',
+                    compromisos:[{
+                      "compromiso1":{
+                        "nombre":".- Ampliación de nueva infraestructura de Hospital Virgen de Fátima de Chachapoyas",
+                        "plazo":"-",
+                        "riesgo":"No",
+                        "detalle":{
+                          "nombre":"compromiso1",
+                          "estado":"pendiente",
+                          "descripcion":"ddjhgkj",
+                          "situacion_actual":"Preparación para la puesta en operación. Obra no llegó a ser entregada y recepcionada por la DIRESA Amazonas porque falta implementar la central de aire comprimido en Neonatología. La empresa constructora se ha negado a la solicitud de PRONIS de hacerse cargo de la instalación de dicha central. Por ello, PRONIS evalúa iniciar un proceso judicial contra la empresa constructora y la empresa supervisora. Mientras tanto, el Gobierno Regional se hará cargo de la provisión de aire comprimido",
+                          "prioridad":"alto",
+                          "riesgo":"si",
+                          "plazo_faltante":"10 meses",
+                          "inversion":"S/ 16,621,251.42",
+                          "moneda_tipo":"usd",
+                          "fecha_de_comppromiso":"24/12/2",
+                          "fecha_cumplimiento":"##/##/##"
+                        }
+                      },
+                      "compromiso2":{
+                        "nombre":".2.- Sustitución de infraestructura y equipamiento en Hospital Santiago Apóstol",
+                        "plazo":"-",
+                        "riesgo":"No",
+                        "detalle":{
+                          "nombre":"compromiso1",
+                          "estado":"pendiente",
+                          "codigo_SNIP":"83220",
+                          "descripcion":"-",
+                          "situacion_actual":"OPI MINSA opinó favorablemente (07.11.2016). MEF habilitó el sistema para que el GORE pueda dar viabilidad al PIP con un solo nivel de estudio por ser estratégico. PIP viable desde el 08.11.2016. Está en la etapa de perfil viable a cargo del GORE.El GORE ha convocado a concurso para elaboración de expediente técnico. La fecha de programación de la buena pro es el 21 de agosto 2017.",
+                          "prioridad":"alto",
+                          "riesgo":"si",
+                          "plazo_faltante":"-",
+                          "inversion":"s/.88,465,113",
+                          "moneda_tipo":"soles",
+                          "fecha_de_comppromiso":"24/12/2",
+                          "fecha_cumplimiento":"##/##/##"
+                        }
+                      }
+                    }]
+                  },
+                  {
+                    id: 'mesa2',
+                    mesa_info:'MESA DE TUNDUZA',
+                    compromisos:[{
+                      "compromiso1":{
+                        "nombre":"1.- Gestionar ante el Sector Salud la incidencia y la atención de la presencia de VIH/SIDA en la zona",
+                        "plazo":"-",
+                        "riesgo":"No",
+                        "detalle":{
+                          "nombre":"compromiso1",
+                          "estado":"pendiente",
+                          "descripcion":"-",
+                          "situacion_actual":"Red de Salud Condorcanqui reportó que el equipo de brigada visitó la comunidad la última semana de febrero 2017 y realizó un total de 208 atenciones de tamizaje y despistaje de VIH en la población general entre los 10 a 65 años de edad. De estas atenciones, 57 correspondieron a personas procedentes del Centro Tunduza y 151 a personas procedentes de Puerto Tunduza.",
+                          "prioridad":"alto",
+                          "riesgo":"si",
+                          "plazo_faltante":"10 meses",
+                          "inversion":"-",
+                          "moneda_tipo":"usd",
+                          "fecha_de_comppromiso":"24/12/2",
+                          "fecha_cumplimiento":"##/##/##"
+                        }
+                      },
+                      "compromiso2":{
+                        "nombre":".2.- Promover charlas sobre temas ambientales con la participación del Ministerio de Ambiente y el Ministerio de Salud",
+                        "plazo":"-",
+                        "riesgo":"No",
+                        "detalle":{
+                          "nombre":"compromiso1",
+                          "estado":"pendiente",
+                          "codigo_SNIP":"83220",
+                          "descripcion":"-",
+                          "situacion_actual":"En reunión de coordinación en PCM del 06/03/2017, se acordó que el equipo técnico de Ministerio de Ambiente se hará cargo de las charlas, por lo que no será necesaria la participación de DIGESA. ",
+                          "prioridad":"alto",
+                          "riesgo":"si",
+                          "plazo_faltante":"-",
+                          "inversion":"s/.-",
+                          "moneda_tipo":"soles",
+                          "fecha_de_comppromiso":"24/12/2",
+                          "fecha_cumplimiento":"##/##/##"
+                        }
+                      }
+                    }]
+                  },
+                ]
+              },
+              {
+                id: 'gore',
+                pill_Nav :'Gore Ejeutivo',
+                list_group_pills:[
+                  {
+                    id: 'compromiso11',
+                    mesa_info:'mesañlkjklj1'
+                  },
+                  {
+                    id: 'compromiso12',
+                    mesa_info:'meshujkhjka2'
+                  },
+                  {
+                    id: 'compromiso13',
+                    mesa_info:'mesajhgj hjg3'
+                  },
+                  {
+                    id: 'compromiso14',
+                    mesa_info:'mdfg fgdsa4'
+                  }
+
+                ]
+              },
+              {
+                id: 'muni',
+                pill_Nav :'Muni Ejecutivo'
+              },
+              {
+                id: 'muni',
+                pill_Nav :'Convenio de Gestion'
+              }
+              
+            ]
+          };
+          $("#compromisos").html()(template(context));
         })
       },
       error: function(error) {
         console.log(error);
       }
     });
+  });
+
+  $(document).ready(function(){
+    $(".landa").addClass("blue");  
+    Departamento_Method.loadDatos();
   });
   // Showing off
   regions[i].mouseover(function (e) {
