@@ -320,7 +320,7 @@ var template_navPills ='<ul class="nav nav-pills nav_pills mb-3" id="pills-tab" 
 
 var titulos_mesas = '<div class="col-lg-12 col-md-12 col-sm-12 " style="margin-bottom: 1rem">'+
                       '<div class="list-group_mesa">'+
-                        '<li class="list-group-item list-group-item-action " id="list_{{id.list_group_pills}}"  aria-controls="home">{{mesa_info}}<a href="compromisos.html" class="compromisos float-right">Compromisos</a>'+
+                        '<li class="list-group-item list-group-item-action " id="list_{{id.list_group_pills}}"  aria-controls="home">{{mesa_info}}<div class="compromisos float-right" data-compromisos="compromisos">Compromisos</div>'+
                         '</li>'+
                       '</div>'+
                     '</div>';      
@@ -336,7 +336,7 @@ $(".landa").click(function () {
   $(".landa").addClass("blue");
 });
 
-
+var data_mesa_i = null;
 for (var i = 0; i < regions.length; i++) {
   regions[i].click(function (e) {
     $("#pills").empty();
@@ -376,28 +376,28 @@ for (var i = 0; i < regions.length; i++) {
         $("#convenio_container").append(convenioreemplazarPendientes,convenioreemplazarCumplidos) ;
         $("#padre_totales").append(reemplazarTotalPendientes,reemplazarTotalCumplidos);
 
+        var datos_array=[];
         $(".azul").click(function(){
           $("#pills").empty();
           $(".desaparece").addClass("hidden");
           $("#pillls").removeClass("hidden");
           $("#pillls").toggleClass("aparece");
-          console.log(tipo);
           var data_mesa = tipo[$(this).data("tipo")]["mesas_de_trabajo"];
-          console.log(data_mesa);
           var resultado="";
           for (var i in data_mesa){
             var reemplazarMesaTitulo = titulos_mesas.replace("{{mesa_info}}", data_mesa[i].nombre);
             $("#pillls").append(reemplazarMesaTitulo);
-             console.log(data_mesa[i].nombre);
-          }       
-          
+            $(".compromisos").click(function(){
+              $("#compromisos").removeClass("hidden");
+              $("#pillls").addClass("hidden");
+                datos_array= data_mesa[i].compromisos;
+                console.log("1",datos_array);
+            });   
+          }                 
         });
+        console.log("2", datos_array);
 
-        $(".list-group-item").click(function(){
-          $("#compromisos").removeClass("hidden");
-          $("#pillls").addClass("hidden");
-          
-        });       
+            
       },
       error: function(error) {
         console.log(error);
