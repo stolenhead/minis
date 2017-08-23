@@ -336,6 +336,7 @@ $(".landa").click(function () {
   $(".landa").addClass("blue");
 });
 
+
 var data_mesa_i = null;
 for (var i = 0; i < regions.length; i++) {
   regions[i].click(function (e) {
@@ -355,6 +356,7 @@ for (var i = 0; i < regions.length; i++) {
       url: "/datos.json",
       type: "GET",
       success: function(response) {
+
         var data = response.departamento;
         var data_tipo= (data[region_data]);
         var tipo=data_tipo.tipo;
@@ -406,7 +408,8 @@ for (var i = 0; i < regions.length; i++) {
   });
 
   $(document).ready(function(){
-    $(".landa").addClass("blue");  
+    $(".landa").addClass("blue"); 
+    mostrar(); 
   });
   // Showing off
   regions[i].mouseover(function (e) {

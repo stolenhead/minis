@@ -8,3 +8,5 @@ var template_compromisos = '<div class="tab-pane fade show active" id="pills-mes
 							    '</div>'+
 							  '</div>'+
                            +'</div>';
+
+          
