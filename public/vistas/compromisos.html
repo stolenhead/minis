@@ -46,163 +46,52 @@
               <div class="card">
                 <div class="card-header" role="tab" id="headingOne">
                   <h5 class="mb-0">
-                    <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      1.- Monitoreo de la calidad del agua <span class="pull-right">-</span> <span class="pull-right" style="margin-right: 4rem">- </span>
+                    <a data-toggle="collapse" href="#{{id_container_compromiso}}" aria-expanded="true">
+                      {{compromiso1}}<span class="pull-right {{color}}">{{Prioridad}}</span><span class="pull-right" style="margin-right: 4rem">{{plazo_faltante}}</span>
                     </a>
                   </h5>
                 </div>
 
-                <div id="collapseOne" class="collapse " role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                <div id="{{id_container_compromiso}}" class="collapse " role="tabpanel"  data-parent="#accordion">
                   <div class="card-body">
-                    <div class="row">
-                      <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                        <label>Fecha de Inicio</label>
-                        <input type="number" name="fecha" value="{{ fecha_inicio }}">
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                        <label>Fecha cumplida</label>
-                        <input type="number" name="fecha" value="{{ fecha_cumplida }}">
+                    <div class="row form-group">
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                        <label>Decripción</label>
+                        <div class="detalle_descripcion">{{descripcion}}</div>
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-lg-4 col-md-4 col-sm-12 form-group">
-                        <label>Tiempo</label>
-                        <input type="number" name="fecha" value="{{ fecha_inicio }}">
+                      <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                        <label>Dirección Responsable</label>
+                        <div class="detalle_descripcion">{{direccion_responsable}}"></div>
                       </div>
-                      <div class="col-lg-4 col-md-4 col-sm-12 form-group">
-                        <label>Plazo</label>
-                        <input type="number" name="fecha" value="{{ fecha_cumplida }}">
+                      <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                        <label>Plazo Total</label>
+                        <div class="detalle_descripcion">{{situacion_actual}}"></div>
                       </div>
-                      <div class="col-lg-4 col-md-4 col-sm-12 form-group">
-                        <label>Riesgo</label>
-                        <input type="text" name="fecha" value="{{ estado_cumplimiento }}">
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                        <label>Término de Plazo</label>
+                        <div class="detalle_descripcion">{{termino_plazo}}"</div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                        <label>Plazo Faltante</label>
+                        <div class="detalle_descripcion">{{plazo_faltante}}</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                        <label>Estado</label>
+                        <div class="detalle_descripcion">{{estado}}</div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                        <label>Prioridad</label>
+                        <div class="detalle_descripcion">{{prioridad}}"</div>
                       </div>
                     </div>
                     <div>
-                      <button type= "button" class="btn btn-primary" data-toggle="modal" data-target="#detalle_compromiso" id="detalle"> Más detalle</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" role="tab" id="headingDos">
-                  <h5 class="mb-0">
-                    <a data-toggle="collapse" href="#collapseDos" aria-expanded="true" >
-                      2.- Estudio toxicológico.<span class="pull-right">-</span> <span class="pull-right" style="margin-right: 4rem">- </span>
-                    </a>
-                  </h5>
-                </div>
-
-                <div id="collapseDos" class="collapse " role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                        <label>Fecha de Inicio</label>
-                        <input type="number" name="fecha" value="{{ fecha_inicio }}">
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                        <label>Fecha cumplida</label>
-                        <input type="number" name="fecha" value="{{ fecha_cumplida }}">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-4 col-md-4 col-sm-12 form-group">
-                        <label>Tiempo</label>
-                        <input type="number" name="fecha" value="{{ fecha_inicio }}">
-                      </div>
-                      <div class="col-lg-4 col-md-4 col-sm-12 form-group">
-                        <label>Plazo</label>
-                        <input type="number" name="fecha" value="{{ fecha_cumplida }}">
-                      </div>
-                      <div class="col-lg-4 col-md-4 col-sm-12 form-group">
-                        <label>Riesgo</label>
-                        <input type="text" name="fecha" value="{{ estado_cumplimiento }}">
-                      </div>
-                    </div>
-                    <div>
-                      <button type= "button" class="btn btn-primary" data-toggle="modal" data-target="#detalle_compromiso" id="detalle"> Más detalle</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" role="tab" id="headingtres">
-                  <h5 class="mb-0">
-                    <a data-toggle="collapse" href="#collapseTres" aria-expanded="true">
-                      3.- Plan Integral de Salud<span class="pull-right">-</span> <span class="pull-right" style="margin-right: 4rem">- </span>
-                    </a>
-                  </h5>
-                </div>
-
-                <div id="collapseTres" class="collapse " role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                        <label>Fecha de Inicio</label>
-                        <input type="number" name="fecha" value="{{ fecha_inicio }}">
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                        <label>Fecha cumplida</label>
-                        <input type="number" name="fecha" value="{{ fecha_cumplida }}">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-4 col-md-4 col-sm-12 form-group">
-                        <label>Tiempo</label>
-                        <input type="number" name="fecha" value="{{ fecha_inicio }}">
-                      </div>
-                      <div class="col-lg-4 col-md-4 col-sm-12 form-group">
-                        <label>Plazo</label>
-                        <input type="number" name="fecha" value="{{ fecha_cumplida }}">
-                      </div>
-                      <div class="col-lg-4 col-md-4 col-sm-12 form-group">
-                        <label>Riesgo</label>
-                        <input type="text" name="fecha" value="{{ estado_cumplimiento }}">
-                      </div>
-                    </div>
-                    <div>
-                      <button type= "button" class="btn btn-primary" data-toggle="modal" data-target="#detalle_compromiso" id="detalle"> Más detalle</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" role="tab" id="headingCuatro">
-                  <h5 class="mb-0">
-                    <a data-toggle="collapse" href="#collapseCuatro" aria-expanded="true" aria-controls="collapseOne">
-                      4. Plan Estratégico de Desarrollo de Recursos Humanos<span class="pull-right">-</span> <span class="pull-right" style="margin-right: 4rem">- </span>
-                    </a>
-                  </h5>
-                </div>
-
-                <div id="collapseCuatro" class="collapse " role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                        <label>Fecha de Inicio</label>
-                        <input type="number" name="fecha" value="{{ fecha_inicio }}">
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                        <label>Fecha cumplida</label>
-                        <input type="number" name="fecha" value="{{ fecha_cumplida }}">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-4 col-md-4 col-sm-12 form-group">
-                        <label>Tiempo</label>
-                        <input type="number" name="fecha" value="{{ fecha_inicio }}">
-                      </div>
-                      <div class="col-lg-4 col-md-4 col-sm-12 form-group">
-                        <label>Plazo</label>
-                        <input type="number" name="fecha" value="{{ fecha_cumplida }}">
-                      </div>
-                      <div class="col-lg-4 col-md-4 col-sm-12 form-group">
-                        <label>Riesgo</label>
-                        <input type="text" name="fecha" value="{{ estado_cumplimiento }}">
-                      </div>
-                    </div>
-                    <div>
-                      <button type= "button" class="btn btn-primary" data-toggle="modal" data-target="#detalle_compromiso" id="detalle"> Más detalle</button>
+                      <button type= "button" class="btn btn-primary" data-toggle="modal" data-target="#detalle_compromiso" id="#1{{id_container_compromiso}}">Información Ampliada</button>
                     </div>
                   </div>
                 </div>
@@ -211,68 +100,60 @@
           </div>
         </div>  	
       </section>
-      <div class="modal fade" id="detalle_compromiso" tabindex="-1" role="dialog"  aria-hidden="true">
+      <div class="modal fade" id="#1{{id_container_compromiso}}" tabindex="-1" role="dialog"  aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-body">
               <div class="container">
                 <div class="row">
-                  <div class="col-md-6 col-lg-6 col-sm-12">
-                    <div class="row form-group">
-                      <label>Situacion Actual</label>
-                      <div class="detalle_descripcion">{{DESCRIPCION}}</div>
-                    </div>
-                    <div class="row ">
-                      <label style="color: #0b6dbc">Prioridad</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> SI
-                      </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> NO
-                      </label>
-                    </div>
-                    <div class="row form-group">
-                      <label>Fecha de Compromiso</label>
-                      <div class="detalle_descripcion">{{descripcion}}</div>
-                    </div>
-                    <div class="row form-group">
-                      <label>Tiempo a Cumplir</label>
-                      <div class="detalle_descripcion">{{tiempo_cumplir}}</div>
-                    </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                    <label>Situacion Actual</label>
+                    <div class="detalle_descripcion">{{situacion_actual}}</div>
                   </div>
-                  <div class="col-md-6 col-lg-6 col-sm-12">
-                    <div class="row form-group">
-                      <label>Inversión</label>
-                      <input type="number" name="inversion" class="form-control" value="{{inversion}}">
-                    </div>
-                    <div class="row ">
-                      <label style="color: #0b6dbc">Riesgo</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> SI
-                      </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> NO
-                      </label>
-                    </div>
-                    <div class="row form-group ">
-                      <label>Tiempo a Cumplir</label>
-                      <div class="row">
-                        <input type="text" name="iestado"  value="{{estado_cumplimiento}}" class="col-lg-6 col-md-6 col-sm-12 form-control">
-                        <input type="text" name=""  value="{{fecha_cunplir}}" class="col-lg-6 col-md-6 col-sm-12 form-control">
-                      </div>
-                    </div>
-                    <div class="row form-group">
-                      <label>Plazo Faltante</label>
-                      <input type="text" name="iestado" class="form-control" value="{{plazo_faltante}}">
-                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-lg-6 col-sm-12  form-group">
+                    <label>Documento Fuente</label>
+                    <div class="detalle_descripcion">{{documento_fuente}}</div>
+                  </div>
+                  <div class="col-md-6 col-lg-6 col-sm-12  form-group">
+                    <label>Prioridad</label>
+                    <div class="detalle_descripcion">{{prioridad}}</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-lg-6 col-sm-12  form-group">
+                    <label>Fecha de Compromiso</label>
+                    <div class="detalle_descripcion">{{fecha_compromiso}}</div>
+                  </div>
+                  <div class="col-md-6 col-lg-6 col-sm-12  form-group">
+                    <label>Termino Plazo</label>
+                    <div class="detalle_descripcion">{{termino_plazo}}</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 col-lg-4 col-sm-12  form-group">
+                    <label>Tipo de Moneda</label>
+                    <div class="detalle_descripcion">{{tipo_moneda}}</div>
+                  </div>
+                  <div class="col-md-4 col-lg-4 col-sm-12">
+                    <label>Inversion</label>
+                    <div class="detalle_descripcion">{{inversion}}</div>
+                  </div>                   
+                  </div>
+                  <div class="col-md-4 col-lg-4 col-sm-12  form-group">
+                    <label>Termino Plazo</label>
+                    <div class="detalle_descripcion">{{termino_plazo}}</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-lg-6 col-sm-12  form-group">
+                    <label>Tipo de Plazo</label>
+                    <div class="detalle_descripcion">{{Tipo de Plazo}}</div>
+                  </div>
+                   <div class="col-md-6 col-lg-6 col-sm-12  form-group">
+                    <label>Plazo Faltante</label>
+                    <div class="detalle_descripcion">{{Plazo_faltante}}</div>
                   </div>
                 </div>
               </div>
@@ -292,3 +173,4 @@
 <script src="../js/tabla.js"></script>
 </body>
 </html>
+template_compromisos.replace(/{{compromiso1}}/g , compromiso['nombre']).replace(/{{plazo_faltante}}/g ,compromiso['plazos']).replace(/{{pendiente}}/g , compromiso['pendiente']).replace(/{{descripcion}}/g,compromiso['descripcion']).replace(/{{direccion_responsable}}/g, compromiso['direccion_responsable']).replace(/{{situacion_actual}}/g ,compromiso['situacion_actual']).replace(/{{termino_plazo}}/g,compromiso['termino_plazo']).replace(/{{estado}}/g,compromiso['estado']).replace(/{{inversion}}/g,compromiso['inversion']).replace(/{{tipo_de_Plazo}}/g,compromiso['tipo_de_Plazo']).replace(/{{documento_fuente}}/g,compromiso['documento_fuente']);
