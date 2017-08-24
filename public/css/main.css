@@ -18,11 +18,11 @@
 #padre_totales
 {
   position: absolute;
-    width: 14em;
-    top: 13em;
+    width: 11rem;
+    top: -1rem;
     height: 5em;
     border: 1px solid #1c7dcc;
-    left: 33em;
+    left: 2rem;
     padding: 10px;
     color: darkslategray;
 }
@@ -72,17 +72,6 @@ a
 {
   display: block;
 }
-.form-geo .select2-container--default .select2-selection--single {
-  height: 25px;
-}
-
-.no-padding {
-  padding: 0 !important;
-}
-
-.margin_select {
-  margin-bottom: 4%;
-}
 
 .azul {
   color: #0067b9;
@@ -97,29 +86,8 @@ a
   padding-right: 5%;
 }
 
-.absolute-top {
-  position: fixed;
-  top: 0;
-  z-index: 100;
-}
-
-.absolute-bottom {
-  bottom: 0rem;
-  position: fixed;
-}
-
 .top {
   margin-top: 4%;
-}
-
-.container-titulo {
-  margin-left: 23%;
-  text-align: center;
-  width: 67%;
-}
-
-.container-titulo h1 {
-  font-size: 36px;
 }
 
 .container-titulo h3 {
@@ -130,21 +98,8 @@ a
   padding: 0 !important;
 }
 
-form {
-  margin-bottom: 2%;
-  margin-top: 5%;
-}
-
 .experiencia {
   font-size: 2.5rem;
-}
-
-
-
-.resultados-height {
-  border: 1px solid #ddd;
-  height: 21rem;
-  overflow: auto;
 }
 
 .mapa {
@@ -154,26 +109,17 @@ form {
   width: 48%;
 }
 
-.logo {
-  height: 5rem;
-}
-.logo_minsa{
-	width: 64%;
-	height: 5rem;
-}
-.form-group label {
-  color: #0067b9;
-}
-  .geo .select2-container{
-    width: 100%!important;
-  }
 @media (max-width: 980px) {
   .container-titulo {
     margin-left: 0;
     text-align: center;
     width: 100%;
   }
-
+  
+  #padre_totales
+  {
+    top: 0rem;
+  }
   .mapa {
     height: auto;
     margin-left: 7%;
@@ -189,17 +135,10 @@ form {
     padding-left: 9%;
   }
 
-  .select2 .select2-container .select2-container--default .select2-container--below {
-    width: 100% !important;
-  }
-
   .peru {
     margin-left: 28%;
   }
-  .vacuna{
-    margin-bottom: 8rem;
-    margin-top: 2rem;
-  }
+ 
 }
 
 @media (max-width: 425px) {
@@ -210,34 +149,6 @@ form {
   .container-titulo h3 {
     font-size: 20px;
   }
-  .geo .select2-container{
-    width: 100%!important;
-  }
-  .vacuna{
-    margin-bottom: 8rem;
-    margin-top: 2rem;
-  }
+  
 }
 
-@media (max-width: 1440px)and (min-width: 768px) {
-
-  .info {
-    font-size: 1.7rem;
-    margin-left: 4%;
-    margin-top: -15%;
-    text-align: center;
-    width: 40%;
-  }
-
-  form {
-    margin-bottom: 2%;
-    margin-top: 0%;
-  }
-
-  .experiencia {
-    font-size: 1.5rem;
-  }
-  .geo .select2-container{
-    width: 100%!important;
-  }
-}
